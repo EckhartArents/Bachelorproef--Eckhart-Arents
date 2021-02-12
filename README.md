@@ -1,102 +1,60 @@
-# Bachelorproef toegepaste informatica
+# Docker of alternatieven als introductie tot containervirtualisatie
 
-Deze repository bevat LaTeX sjablonen voor gebruik bij het opmaken van je bachelorproef toegepaste informatica:
+Een Bachelorproef door Eckhart Arents
+met Bert Van Vreckem als promotor en co-promotor
 
-- [Het onderzoeksvoorstel](./voorstel/)
-- [De bachelorproef zelf](./bachproef/)
-- [Een poster](./poster/)
+# Abtract
+De technologie van container virtualisatie wordt steeds populairder maar wordt momenteel nog niet gedoceerd binnen de opleiding toegepaste informatica aan de HoGent. Docker is de grootste aanbieder van software voor deze technologie, maar er bestaan ook alternatieven.  Dit onderzoek zal Docker en zijn alternatieven vergelijken om zo de meest gebruiksvriendelijke voor student te achterhalen.  Met deze meest gebruiksvriendelijke zal er vervolgens een proof of concept demonstratie opgesteld worden die dienst kan doen als introductie tot het veld van container virtualisatie.
 
-Het voorblad van het bachelorproefsjabloon is conform aan datgene dat door de [scriptie-tool](https://scriptie.hogent.be/) wordt gegenereerd.
+#planning
+Dit loopt gelijktijdig met mijn stage. Het meeste werk zal dus verricht worden op de dag dat ik geen stage heb, wekelijks maandag. Of na 16 uur de andere week dagen. Ongetwijfeld zal er ook  wat tijd in het weekend gewerkt worden. 
 
-## Aan de slag
+Ook hoe verder in de toekomst hoe meer open het staat voor de nodige aanpassingen.
 
-Om deze sjablonen zelf te gebruiken, kan je de repository downloaden via de groene knop rechtsboven deze pagina. Het is beter een ZIP te downloaden en zelf een Github repository te initialiseren dan deze repository te klonen. In het laatste geval neem je dan immers ook de gehele historiek van wijzigingen in het sjabloon zelf mee en dat is niet relevant voor jouw werk. Maak daarna een Github-repository voor jezelf aan. Steek een LaTeX-document altijd in een versiebeheersysteem!
+##15/02
+Gulzig alle mogelijke bronnen opzoeken, van first party websites tot papers tot 3rd party blogs. Beginnende op 15/02 en de rest van de week op vrije momenten: kritisch alles doornemen en grof notities per bron.
+##22/02
+Verder opzoeken op basis van vragen die mogelijk zijn gekomen tijdens het verder doorlezen van bronnen. Ook een grof skelet opstellen van wat ik van elke technologie wil bespreken in de literatuurstudie, en een eerste inschatting van welke technologieën ik waarschijnlijk neem om me verder te werken (Minstens 1 naast docker, wellicht maximaal 3 om haalbaar te blijven).
 
-Gebruik deze repository ook om andere artefacten/deelresultaten van je bachelorproef bij te houden, zoals nota's, ruwe resultaten, scripts/programmacode, enz. Gebruik bij voorkeur tekstgebaseerde bestandsformaten, bijvoorbeeld Markdown ipv Word-documenten of CSV (Comma Separated Values) ipv Excel-werkbladen.
+Ergens in deze week best samen komen om twijfelgevallen van bronnen te bespreken en pijlen naar de geschiktheid van mijn idee voor het skelet per technologie + intentie verklaring
+##01/03
+Begingen met uitgewerkt te schrijven, Per technologie.
+##08/03
+Verder schrijven aan de literatuur en hopelijk een volledig klad te hebben zodat ik deze al eens kan voorleggen aan mijn promotor Bert van Vreckem.
 
-Voor aanbevelingen i.v.m. het onderzoeksproces en het gebruik van LaTeX voor het schrijven van een bachelorproef, kan je [deze praktische gids](https://github.com/hogenttin/bachproef-gids) nalezen. Je vindt er bv. uitleg over hoe je een onderwerp kan kiezen, hoe je een vergelijkende studie aanpakt, hoe je een literatuurstudie voert en dat op een correcte manier in LaTeX verwerkt, invoegen van afbeeldingen, enz.
+Ergens hierna nog eens samen komen
+##15/03
+Verbeteren literatuur studie  
+##29/03
+Liefst de literatuur studie deftig afwerken
+##29/03 
+Grof idee wat er allemaal moet gedaan worden voor de proof of concept voor de gekozen technologieën.
 
-## LaTeX editor, bibliografie
+Hier en/of de week ervoor best nog eens samen komen 
+##05/04 
+Docker gebruiken +1ste mogelijke alternatief. hierbij bijhouden wat er allemaal misging of tegen valt.
+##12/04 
+2de en (3de) mogelijke alternatief (indien die er zijn)
 
-Qua editors voor LaTeX zijn er verschillende keuzemogelijkheden. We raden [TeXstudio](https://www.texstudio.org/) aan en [Jabref](https://www.jabref.org/) voor het bijhouden van een bibliografische databank. Enkele richtlijnen bij het configureren van deze applicaties:
+Eens samenkomen
+##19/04 
+Uitwerken concrete proof of concept stappenplan met de beste technologie
+##26/04 
+van een clean installen eens de proof of concept uitwerken
 
-### TeXstudio
+Nog eens samenkomen
+##3/05 
+draft bachlorproef schrijven
+##10/05 
+draft bachlorproef schrijven 
 
-Kies in het menu voor Options > Configure TeXstudio en pas volgende instellingen aan:
-
-- Build:
-    - Default compiler: "txs:///pdflatex"
-    - Default Bibliography Tool: "txs:///biber" - Zorgt dat "biber" gebruikt wordt om de bibliografie te compileren (ipv biblatex)
-- Editor:
-    - Indentation mode: Indent and Unindent Automatically
-    - Replace Indentation Tab by Spaces: Aanvinken
-    - Replace Tab in Text by spaces: Aanvinken
-    - Replace Double Quotes: English Quotes: ‘‘’’
-
-Tips:
-
-- Gebruik functietoets **F5** om het document te compileren en het resultaat te bekijken.
-- Als na compilatie de bibliografie niet zichtbaar is, probeer die dan expliciet te compileren met **F8** en daarna opnieuw **F5**
-
-### Jabref
-
-Kies in het menu voor File > Switch to BibLaTeX mode. Dit maakt de bestandsindeling van de bibliografische databank compatibel met dat van de cursus en het aangeboden LaTeX-sjabloon voor de bachelorproef. Als deze menu-optie niet beschikbaar is, maar wel "Switch to BibTeX mode", dan hoef je niets te doen.
-
-Kies voor Options > Preferences en pas volgende instellingen aan:
-
-- General:
-    - Default encoding: UTF-8
-    - Default bibliography mode: biblatex
-- File:
-    - (optioneel) Main file directory: geef hier de directory waar je de PDFs van gevonden bronnen bijhoudt.
-
-## Bachelorproef in het Engels
-
-Het bachelorproefsjabloon is voorzien op tekst in hetzij Nederlands, hetzij Engels. Wanneer je je bachelorproef in het Engels schrijft, moet je [lijn 52 van het hoofddocument](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/bachproef-tin.tex#L52) uit commentaar halen:
-
-```latex
-\selectlanguage{english}
-```
-
-Aandachtspunten:
-
-- Het voorblad blijft in het Nederlands (behalve je titel), en dit is ook de bedoeling
-- Je moet in dit geval ook een Nederlandse vertaling van je samenvatting voorzien. Het sjabloon houdt daar ook rekening mee:
-    - De samenvatting in de hoofdtaal van het document komt [op lijn 40 van het LaTeX-bestand](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/samenvatting.tex#L40)
-    - De Nederlandse vertaling ervan komt [op lijn 31](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/samenvatting.tex#L31)
-
-## Bachelorproef in het Engels
-
-Het bachelorproefsjabloon is voorzien op tekst in hetzij Nederlands, hetzij Engels. Wanneer je je bachelorproef in het Engels schrijft, moet je [lijn 54 van het hoofddocument](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/bachproef-tin.tex#L54) uit commentaar halen:
-
-```latex
-\selectlanguage{english}
-```
-
-Aandachtspunten:
-
-- Het voorblad blijft in het Nederlands (behalve je titel), en dit is ook de bedoeling
-- Je moet in dit geval ook een Nederlandse vertaling van je samenvatting voorzien. Het sjabloon houdt daar ook rekening mee:
-    - De samenvatting in de hoofdtaal van het document komt [op lijn 40 van het LaTeX-bestand](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/samenvatting.tex#L40)
-    - De Nederlandse vertaling ervan komt [op lijn 31](https://github.com/HoGentTIN/bachproef-latex-sjabloon/blob/master/bachproef/samenvatting.tex#L31)
-
-## Vragen, fouten, verbeteringen
-
-Bugs, vragen voor verbeteringen, enz. zijn welkom! Je kan die registreren via de Issues. Je kan zelf ook verbeteringen aanbrengen via Pull Requests.
-
-## Bijdragen
-
-- De vormgeving van het bachelorproefsjabloon is gebaseerd op het "[Legrand Orange Book](http://www.latextemplates.com/template/the-legrand-orange-book)" sjabloon door Mathias Legrand, met aanpassingen specifiek voor HoGent.
-- De vormgeving van het sjabloon voor het onderzoeksvoorstel is gebaseerd op "Stylish Article", eveneens door Mathias Legrand.
-
-Volgende personen hebben bijgedragen aan deze sjablonen:
-
-- Bert Van Vreckem
-- Jens Buysse
-- Chantal Teerlinck
-- Jeroen Maelbrancke
-- Matts Devriendt
-- Niels Corneille
-- Patrick Van Brussel
-- Simon Rondelez
+Draft voorlegen en samenkomen
+##17/05 
+verbeteren bachlorproef
+##24/05 
+verbeteren bachlorproef
+Nog eens samenkomen voor definitief in te dienen
+Deze weel moet de finale versie ook binnen zijn.
+##31/05 en later 
+Poster en presentatie
 

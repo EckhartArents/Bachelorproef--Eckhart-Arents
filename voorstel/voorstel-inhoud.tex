@@ -3,13 +3,13 @@
 \section{Introductie en state-of-the-art} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-Container virtualisatie is een technologie die toelaat om één specifieke applicatie te draaien in een aangepaste vorm van een Virtuele Machine. Deze aangepaste virtuele machine laat de applicatie toe om hardware bronnen en het netwerk toe te spreken zonder een volwaardig besturing systeem te hebben. Deze containers zorgen daardoor voor minder overhead bij het draaien van applicatie in en Cloud omgeving dan klassieke Virtuele Machines. Het kunnen organiseren en verbinden van deze containers onderling word gedaan doormiddel van Orchestration software. \autocite{eder2016hypervisor}, \autocite{silva2018cont} en \autocite{truyen2019comprehensive}
+Container virtualisatie is een technologie die toelaat om één specifieke applicatie te draaien in een aangepaste vorm van een Virtuele Machine. Deze aangepaste virtuele machine laat de applicatie toe om hardware bronnen en het netwerk toe te spreken zonder een volwaardig besturingssysteem te moeten hebben. Deze containers zorgen daardoor voor minder overhead bij het draaien van applicatie in en Cloud omgeving dan klassieke Virtuele Machines. Het kunnen organiseren en verbinden van deze containers onderling wordt gedaan door middel van Orchestration software. \autocite{eder2016hypervisor,silva2018cont,truyen2019comprehensive}
 
-Binnen de opleiding toegepaste informatica aan de hogent komen klassieke Virtuele Machines al reeds aan bod. Wegen alsmaar toenemend belang van Cloud lijkt het gewezen om Container virtualisatie ook aan bod te laten komen. Hiervoor moet er een toegankelijke combinatie of all-in-one package zijn die door studenten zou kunnen gebruikt worden.
+Binnen de opleiding toegepaste informatica aan de hogent komen klassieke Virtuele Machines al reeds aan bod. Wegen alsmaar toenemend belang van Cloud lijkt het gewezen om Container virtualisatie ook aan bod te laten komen. Hiervoor moet er een toegankelijke combinatie of all-in-one package zijn die door studenten zou kunnen gebruikt worden
 
-Docker\footnote{\url{https://www.docker.com/}} is een van de grootse aanbieders van een container engine en heeft zijn eigen orchestration programma. Het geniet van een goot markt aandeel maar is mogelijk niet meteen geschikt om door een student gebruikt te worden om kennis te makken met containers. Zo is niet mogelijk om als een gratis gebruiker Docker images privé of lokaal te bewaren. Er zijn een aantal alternatieven zoals Containerd\footnote{\url{https://containerd.io/}} en cri-o\footnote{\url{https://cri-o.io/}} die hun eigen runtime omgeving hebben voor containers. In het algemeen lijken  alternatieven die berusten op het Open Container Initiative\footnote{\url{https://opencontainers.org/}} het meest interessant.
+Docker\footnote{\url{https://www.docker.com/}}  is één van de grootste aanbieders van een container engine en heeft zijn eigen orchestration programma. Het heeft een groot marktaandeel maar is mogelijk niet meteen geschikt om door een student gebruikt te worden om kennis te maken met containers. Zo is niet mogelijk om als een gratis gebruiker Docker images privé of lokaal te bewaren. Er zijn een aantal alternatieven zoals Containerd\footnote{\url{https://containerd.io/}} en cri-o\footnote{\url{https://cri-o.io/}} hun eigen runtime omgeving hebben voor containers. In het algemeen lijken  alternatieven die berusten op het Open Container Initiative\footnote{\url{https://opencontainers.org/}} het meest interessant.
  
-Het doel van deze thesis is het onderzoeken van alternatieven voor container software. Om zo de meest geschikte te vinden om gebruikt te worden als introductie tot Container virtualisatie binnen de opleiding toegepaste informatica. Verdere deelonderzoek vragen zijn:
+Het doel van deze thesis is concreet het onderzoeken van aanbieders van container software. Om zo de meest geschikte te vinden om gebruikt te worden als introductie tot Container virtualisatie binnen de opleiding toegepaste informatica. Verdere deelonderzoek vragen zijn:
 \begin{itemize}
     \item Is het nuttig om binnen de opleiding gebruik te maken van een alternatieve tool  in plaats van de "standaard" Docker?
     \item Wat is de impact op de workflow/levenscyclus van containers?
@@ -35,22 +35,23 @@ Het doel van deze thesis is het onderzoeken van alternatieven voor container sof
 \section{Methodologie}
 \label{sec:methodologie}
 
-In eerste fase zal er een markt onderzoek gedaan orden naar de verschillende aanbieders van Container engine software en bijkomende  orchestration. Hierbij krijgt te toegankelijkheid voor studenten het meeste belang. De software moet op alle courante Besturing systemen kunnen draaien, geen hoge kost bij veelvuldig gebruik hebben, en de mogelijkheid om privé de container images te bewaren. Verder moet de software genoeg ondersteuning hebben om een gezond toekomst beeld te hebben.
+In eerste fase zal er een marktonderzoek gedaan worden naar de verschillende aanbieders van Container engine software en bijkomende  orchestration. Hierbij krijgt te toegankelijkheid voor studenten het meeste belang. De software moet op alle courante Besturingssystemen kunnen draaien, geen hoge kost bij veelvuldig gebruik hebben, en de mogelijkheid om privé de container images te bewaren. Verder moet de software genoeg ondersteuning hebben om een gezond toekomstbeeld te hebben.
 
-In de tweede fase zal of zullen de besten uit het marktonderzoek gekozen worden om een proof of concept demonstatie uit te werken die toegankelijk is voor alle studenten toegepaste informatica. Dit proof of concept zal in de vorm van een eenvoudige web applicatie met databank zijn waarbij elk deel in een eigen container zit. Hier is het belangrijk dat de student betrokken is tot elke stap van het proces. Van het aanmaken van de benodigde container image en deze draaien. Tot het verbinden van de containers via ochestration en het kunnen aanspreken van de opgestelde webapplicatie.   
+In de tweede fase zal of zullen de besten uit het marktonderzoek gekozen worden om een proof of concept demonstratie uit te werken die toegankelijk is voor alle studenten toegepaste informatica. Dit proof of concept zal in de vorm van een eenvoudige webapplicatie met databank zijn, waarbij elk deel in een eigen container zit. Hier is het belangrijk dat de student betrokken is tot elke stap van het proces. beginnende met het aanmaken van de benodigde container image en deze te draaien. Tot het verbinden van de containers via orchestration en het kunnen aanspreken van de opgestelde webapplicatie.    
 
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
 
-Uit het markt onderzoek word er verwacht dat er een aanbieder of combinatie is die beter is om gebruikt te worden door studenten in een leer omgeving dan de klassieke docker en dat deze geniet van een voldoende gezonde toekomst.  Om zo met deze een proof of concept demonstratie op te kunnen stellen waarbij er mogelijk extra stappen moeten gezet worden afhankelijk van het host besturingssysteem. En dat deze demo gegeven kan worden op een à twee lesblokken. 
-Bij gebrek aan een beduiden beter alternatief voor Docker zal de proof of concept demonstatie  uitgevoerd worden aan de hand van Docker en bijhorende technologieën. 
+Uit het marktonderzoek wordt er verwacht dat er een aanbieder of combinatie is die beter is om gebruikt te worden door studenten in een leeromgeving dan de klassieke docker en dat deze geniet van een voldoende gezonde toekomst.  Om zo met deze een proof of concept demonstratie op te kunnen stellen waarbij er mogelijk extra stappen moeten gezet worden afhankelijk van het host besturingssysteem. En dat deze demo gegeven kan worden op een à twee lesblokken.
+ 
+Met docker zal sowieso gewerkt worden om een baseline te hebben om de andere technologieën me te vergelijken. Als de andere uitgeprobeerde technologieën niet voldoende beter zijn dan docker,  zal de proof of concept demonstratie uitgewerkt worden aan de hand van docker. 
 
 
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Dat door concurrentie op de markt er een aanbieder is die een meer open en minder direct commercieel invulling heeft dan Docker. Die Eveneens geschikt is om als middel te dienen voor volwaardige introductie to Container Virtualisatie. En dat deze ook voldoende ondersteund is door grootte Cloud platform aanbieders.  
+Het verwachte resultaat is dat door concurrentie op de markt er een aanbieder is die een meer open en minder direct commercieel invulling heeft dan Docker. Die Eveneens geschikt is om als middel te dienen voor volwaardige introductie to Container Virtualisatie. En dat deze ook voldoende ondersteund is door grootte Cloud platform aanbieders.  
 

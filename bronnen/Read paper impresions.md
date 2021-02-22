@@ -190,7 +190,7 @@ Heb ik nog niet volledig gelezen (53 pagina’s !)
 
 - **nieuwe** vernoemde tech: aurora , DC/OS
 
-- gedaan door KU leuven, contact maken zou zelfs mogelijk kunnen zijn via mijn moeder (die nog steeds wilt dat ik daar een master doe)
+- gedaan door KU leuven
 
 # Boeken
 
@@ -202,12 +202,12 @@ Bolledig boek over het werken met LXC
 
 ## Third international congress on ICT
 
-Heeft enkel “The Comparison of Container Orchestrators” als intersant item
+Heeft enkel “The Comparison of Container Orchestrators” als intersant hoofdstuk
 
 ## Emerging Technologies in Data Mining and Information Security
 
-Heeft enkel “Docker Containers Versus Virtual Machine-Based Virtualization” als intersant item
+Heeft enkel “Docker Containers Versus Virtual Machine-Based Virtualization” als intersant hoofdstuk
 
 ## Systems Modeling: Methodologies and Tools
 
-Heeft enkel “Container Orchestration: A Survey” als intersant item
+Heeft enkel “Container Orchestration: A Survey” als intersant hoofdstuk

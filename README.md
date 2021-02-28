@@ -20,7 +20,7 @@ Verder opzoeken op basis van vragen die mogelijk zijn gekomen tijdens het verder
 Ergens in deze week best samen komen om twijfelgevallen van bronnen te bespreken en pijlen naar de geschiktheid van mijn idee voor het skelet per technologie + intentie verklaring
 
 ## 01/03
-Begingen met uitgewerkt te schrijven, Per technologie.
+op z'n minst een eerste klad van inleiding, stand van zaken(wat is het, waarom, hoe werkt het? dockers als leidraad)& stevige Requirements defineeeren
 
 ## 08/03
 Verder schrijven aan de literatuur en hopelijk een volledig klad te hebben zodat ik deze al eens kan voorleggen aan mijn promotor Bert van Vreckem.

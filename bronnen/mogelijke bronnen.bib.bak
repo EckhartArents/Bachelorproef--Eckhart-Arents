@@ -22,17 +22,6 @@
   doi       = {10.1007/978-3-319-92378-9_14},
 }
 
-@Misc{Wähner2016,
-  author       = {Kai Wähner},
-  howpublished = {infoq},
-  month        = {nov},
-  note         = {possibly uotdated},
-  title        = {The Container Landscape: Docker Alternatives, Orchestration, and Implications for Microservices},
-  year         = {2016},
-  timestamp    = {2021-02-15},
-  url          = {https://www.infoq.com/articles/container-landscape-2016/},
-}
-
 @Article{Casalicchio2020,
   author    = {Emiliano Casalicchio and Stefano Iannucci},
   journal   = {Concurrency and Computation: Practice and Experience},
@@ -93,19 +82,15 @@ doi = {10.2478/acss-2018-0003}
   publisher={Springer}
 }
 
-@article{rubens2017containers,
-  title={What are containers and why do you need them},
-  author={Rubens, Paul},
-  journal={CIO. Last modified June},
-  volume={27},
-  year={2017}
-}
-
-@techreport{souppaya2017application,
-  title={Application container security guide},
-  author={Souppaya, Murugiah and Morello, John and Scarfone, Karen},
-  year={2017},
-  institution={National Institute of Standards and Technology}
+@InCollection{Yadav2018,
+  author    = {Anuj Kumar Yadav and M. L. Garg and Ritika},
+  booktitle = {Advances in Intelligent Systems and Computing},
+  publisher = {Springer Singapore},
+  title     = {Docker Containers Versus Virtual Machine-Based Virtualization},
+  year      = {2018},
+  month     = {sep},
+  pages     = {141--150},
+  doi       = {10.1007/978-981-13-1501-5_12},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

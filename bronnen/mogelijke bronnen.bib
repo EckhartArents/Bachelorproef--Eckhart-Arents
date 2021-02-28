@@ -22,17 +22,6 @@
   doi       = {10.1007/978-3-319-92378-9_14},
 }
 
-@Misc{Wähner2016,
-  author       = {Kai Wähner},
-  howpublished = {infoq},
-  month        = {nov},
-  note         = {possibly uotdated},
-  title        = {The Container Landscape: Docker Alternatives, Orchestration, and Implications for Microservices},
-  year         = {2016},
-  timestamp    = {2021-02-15},
-  url          = {https://www.infoq.com/articles/container-landscape-2016/},
-}
-
 @Article{Casalicchio2020,
   author    = {Emiliano Casalicchio and Stefano Iannucci},
   journal   = {Concurrency and Computation: Practice and Experience},
@@ -93,21 +82,6 @@ doi = {10.2478/acss-2018-0003}
   publisher={Springer}
 }
 
-@article{rubens2017containers,
-  title={What are containers and why do you need them},
-  author={Rubens, Paul},
-  journal={CIO. Last modified June},
-  volume={27},
-  year={2017}
-}
-
-@techreport{souppaya2017application,
-  title={Application container security guide},
-  author={Souppaya, Murugiah and Morello, John and Scarfone, Karen},
-  year={2017},
-  institution={National Institute of Standards and Technology}
-}
-
 @InCollection{Yadav2018,
   author    = {Anuj Kumar Yadav and M. L. Garg and Ritika},
   booktitle = {Advances in Intelligent Systems and Computing},
@@ -117,6 +91,72 @@ doi = {10.2478/acss-2018-0003}
   month     = {sep},
   pages     = {141--150},
   doi       = {10.1007/978-981-13-1501-5_12},
+}
+@Inbook{Jangla2018,
+author="Jangla, Kinnary",
+title="Containers",
+bookTitle="Accelerating Development Velocity Using Docker: Docker Across Microservices",
+year="2018",
+publisher="Apress",
+address="Berkeley, CA",
+pages="1--8",
+abstract="In this chapter, you will learn the basics of containers and how they are used in the software industry. You will also see how containers differ from virtual machines and discover some of the pros and cons of using containers. This chapter puts you on the path to learning about Docker in depth.",
+isbn="978-1-4842-3936-0",
+doi="10.1007/978-1-4842-3936-0_1",
+url="https://doi.org/10.1007/978-1-4842-3936-0_1"
+}
+@Inbook{Johnson2020,
+author="Johnson, Bruce",
+title="Containers and Orchestration",
+bookTitle="Essential Visual Studio 2019: Boosting Development Productivity with Containers, Git, and Azure Tools",
+year="2020",
+publisher="Apress",
+address="Berkeley, CA",
+pages="329--347",
+abstract="It's always fascinating to watch new technologies move through the development ecosystem. If you're old enough, you might remember the move from monolithic desktop applications to client/server architecture. And then everything had to be running on the Web. And then back to a service-oriented architecture. And then onto the Web again.",
+isbn="978-1-4842-5719-7",
+doi="10.1007/978-1-4842-5719-7_10",
+url="https://doi.org/10.1007/978-1-4842-5719-7_10"
+}
+@Inbook{Sabharwal2020,
+author="Sabharwal, Navin
+and Pandey, Piyush",
+title="Getting Started with Containers",
+bookTitle="Monitoring Microservices and Containerized Applications: Deployment, Configuration, and Best Practices for Prometheus and Alert Manager",
+year="2020",
+publisher="Apress",
+address="Berkeley, CA",
+pages="21--42",
+abstract="This chapter will provide hands-on steps for installing Docker and Kubernetes. We also look into how to deploy a containerized application on Kubernetes. This will set us up for the following chapters, where we will monitor this setup using Prometheus. This chapter will cover the following topics:",
+isbn="978-1-4842-6216-0",
+doi="10.1007/978-1-4842-6216-0_2",
+url="https://doi.org/10.1007/978-1-4842-6216-0_2"
+}
+
+@InProceedings{Ruan2016,
+  author    = {Ruan, Bowen and Huang, Hang and Wu, Song and Jin, Hai},
+  booktitle = {Advances in Services Computing},
+  title     = {A Performance Study of Containers in Cloud Environment},
+  year      = {2016},
+  address   = {Cham},
+  editor    = {Wang, Guojun and Han, Yanbo and Mart{\'i}nez P{\'e}rez, Gregorio},
+  pages     = {343--356},
+  publisher = {Springer International Publishing},
+  abstract  = {Container technology has gained great popularity since containers could provide near-native performance in cloud environment. According to different design purposes and underlying implementations, containers could be classified into application containers (e.g., Docker) and system containers (e.g., LXC). The diversity of containers may lead to a confusing choice about which kind of container is suitable for different usage scenarios. Meanwhile, the architectures of public container services are quite controversial because cloud platforms tend to run containers in virtual machines. From the perspective of performance, an extra virtual machine layer between the bare metal and containers probably brings in unnecessary performance overhead. In this paper, we carry out a performance study to explore the appropriate way to use containers from different perspectives. We first conduct a series of experiments to measure performance differences between application containers and system containers, then evaluate the overhead of extra virtual machine layer between the bare metal and containers, and finally inspect the service quality of ECS (Amazon EC2 Container Service) and GKE (Google Container Engine). Our results show that system containers are more suitable to sustain I/O-bound workload than application containers, because application containers will suffer high I/O latency due to layered filesystem. Running containers in virtual machine would result in severe disk I/O performance degradation up to 42.7 {\%} and network latency up to 233 {\%}. We also find out ECS offers better performance than GKE, and cloud platforms could acquire better performance by running containers directly on the bare metal.},
+  isbn      = {978-3-319-49178-3},
+}
+
+@InProceedings{Abdullah2019,
+  author    = {Abdullah, Muhammad and Iqbal, Waheed and Bukhari, Faisal},
+  booktitle = {Intelligent Technologies and Applications},
+  title     = {Containers vs Virtual Machines for Auto-scaling Multi-tier Applications Under Dynamically Increasing Workloads},
+  year      = {2019},
+  address   = {Singapore},
+  editor    = {Bajwa, Imran Sarwar and Kamareddine, Fairouz and Costa, Anna},
+  pages     = {153--167},
+  publisher = {Springer Singapore},
+  abstract  = {Multi-tier architecture is widely used to develop large-scale applications. Virtual Machines (VM) are commonly used to deploy and manage multi-tier applications where each tier of the application is deployed on a separate VM instance. However, recent advancements in OS-level virtualization, known as a Container, is compelling to use as an alternate to VM mainly due to it eliminates the need of a guest operating system and ensures a good level of isolation. In this paper, we compare the performance of VMs and Containers to deploy, manage, and auto-scale multi-tier applications under dynamically increasing workloads. We used OpenNebula-based private testbed cloud to provision VMs and Docker Swarm to provision Containers to a multi-tier application. Our experimental evaluation shows that Containers provide comparable performance to serve a large number of concurrent requests whereas a significant reduction in the rejected requests can be achieved. We observed 46.48{\%} and 70.23{\%} fewer request rejections using Container-based deployment and auto-scaling for multi-tier web applications.},
+  isbn      = {978-981-13-6052-7},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

@@ -5,32 +5,27 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+Er is altijd al een nood geweest om software te kunnen draaien volledig onafhankelijk van de hardware en het besturingen systeem van een machine. De methodiek va een volledige virtual machine bestaat dan ook al een tijd. Een virtuele omgeving voorzie je het besturingssysteem van de hardware die wenst dat het heeft. Een probleem dat hier bij opkomt is dat het volledig besturing systeem niet altijd nodig is om een applicatie te draaien.  Zeek als je in een virtueel een omgeving maar één specifieke applicatie wilt draaien is de overhead van een besturingssysteem iets dat je kan missen.  Om één applicatie te draaien in een virtueel omgeving die het enkel voorziet van wat het nodig heeft is container virtualisatie in het leven geroepen. 
+Het idee om in virtuele context een applicatie enkel toegang te geven tot wat het nodig heeft bestaat al lang, maar de recente populariteit van de container virtualisatie is voornamelijk te danken aan docker.  Docker slaagde erin het beheren en draaien van containers veel toegankelijker te maken dat de oudere manier waarmee Linux al werkte.  Verder heeft docker ook veel bijgedragen tot een standaard voor containers, hoe ziet een container er uit en hoe gedraagt het zich.  Deze standaard manier va het werken met containers en hun verticaliteit hielp ook bij het opzetten van de Cloud. Een container zal zicht het zelfde gedragen op elke server onafhankelijk van de onderliggende hardware. Bijkomend kunnen containers vlug bijgemaakt worden, zodanig dat als er een toename aan vraag is of er ergen een applicatie faalt het probleem snel opgelost geraakt. Idereen die met het technische deel van de Cloud in aanraking komt zou dus best kennis hebben van containers en hoe met deze te werken.
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
 
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's,'' systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Binnen de opleiding toegepaste informatica word de klassieke virtueel machine al aan bod gebracht, maar de Cloud en verwante technologieën kommen nog maar beperkt voor. Container virtualisatie is ook  iets dat zeer belangrijk is om mee te kunnen werken in een wereld waarbij je niet noodzakelijk de servers die je gebruikt fysiek bij jou hebt staan. De studenten kunnen voorbereiden op containers is dan ook meerwaarde voor de opleiding. 
 
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+Concreet is de vraag van deze thesis of dat Docker voldoet om als inleiding tot het gebruik van containers of dat een andere aanbieder beter zou zijn. Een aanbieder die net zoals docker iemand in staat stelt om lokaal op hun computer met containers te werken of een aanbieder die alles onmiddellijk  in de Cloud doet.
+% Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+Uit dit onderzoek moet duidelijk zijn dat Docker of een alternatief voldoet om gebruikt te worden als leermateriaal om met containers te werken. Dit door zowel een vergelijkende analyse van Dockers en zijn alternatieven, als het opzetten van een proof of concept demonstratie met de meest belovende technologieën.
+Voor het aftoetsen van een mogelijk aanvaardbaar alternatief zijn er veel zaken die in het in rekening moeten worden gebracht worden, zeker voor het fungeren als les materiaal. Ten eerste moet het kunnen worden uitgevoerd worden op elk besturingssysteem. Ten tweede moet het uiteraard gebruiksvriendelijk genoeg zijn om op een redelijke hoeveelheid tijd besproken te worden.  Verder mag het studenten ook geen geld kosten. Lokaal moet het volledig gratis of een aanvaardbare trial periode doenbaar zijn. In een Cloud omgeving moet het doenbaar zijn binnen de perken van wat krediet op de Cloud service waarop de student recht zou hebben. Tenslote zou het effectief opzetten van de Drupal site met de technologie, gebruik makende van containers, niet langer dan 4 uur mogen duren.
+% Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv. om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
 \section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}
 \label{sec:opzet-bachelorproef}

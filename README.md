@@ -28,7 +28,7 @@ Verder schrijven aan de literatuur en hopelijk een volledig klad te hebben zodat
 Ergens hierna nog eens samen komen
 
 ## 15/03
-Verbeteren literatuur studie  
+Verbeteren  en aanvullen literatuur studie  
 
 ## 29/03
 Liefst de literatuur studie deftig afwerken

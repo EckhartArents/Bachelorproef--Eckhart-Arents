@@ -1,5 +1,6 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}
 \label{ch:stand-van-zaken}
+In de moderne Cloud omgeving is er een grote focus op het efficiënt kunnen draaien van verschillende applicaties. Virtualisatie laat dan ook toe om server hardware beter te benutten. Zo laat virtualisatie toe dat meerdere gebruikers dezelfde fysieke server aanspreken maar dat alle gebruikers de indruk hebben dat ze alleen aan de server werken. \autocite{Yadav2018} (betere inleiding nodig)
 
 % Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
 % dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
@@ -7,11 +8,36 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+\section{Virtuele machines en Hypervisors}
+Een eerste en klassieke manier van virtualisatie is een volledige virtuele machine (VM). Bij VM wordt er virtuele hardware voorzien van een eigen besturingssysteem. Aan de hand van dit besturingssysteem en de virtuele hardware is het dan ook mogelijk om in deze VM een applicatie te draaien alsof hij op een echte machine staat. Verder zorgt deze virtualisatie ervoor dat het draaien van een applicatie in een VM volledig hetzelfde zal blijven zou de VM zelf op andere hardware berusten. Het besturingssysteem dat in de VM draait is configureerbaar waardoor het mogelijk is om andere soorten toestellen te nabootsen, zoals een gsm.\autocite{Eder2016}
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz. naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin, gebruik je \texttt{$\backslash${}textcite\{\}}.
-Soms wil je de auteur niet expliciet vernoemen, dan gebruik je \texttt{$\backslash${}autocite\{\}}. In de volgende paragraaf een voorbeeld van elk.
+Voor het aanmaken en effectief draaien van VM’s wordt er een Hypervisor gebruikt. De Hypervisor laat toe om meerdere VM’s te draaien en staat in voor de communicatie tussen de VM‘s en de hardware waarop het effectief moet worden uitgevoerd. Vaak laat een hypervisor ook toe om op een eenvoudige manier de VM van buitenaf te bereiken.  Onder Hypervisors zijn er twee verschillende  types te onderscheiden. Type 1 Hypervisors staan zelf direct op de hardware van de machine. Hierdoor heeft de hardware geen directe besturingssysteem een zijn de besturingssystemen die aanwezig zijn enkel deze die als gast door de Hypervisor in een VM worden uitgevoerd op de hardware(figuur 1). Type 2 Hypervisors daarentegen worden uitgevoerd als een gebruikers applicatie binnen een host besturingssysteem. \autocite{Yadav2018,Eder2016}
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+(Figuur hergebruiken uit Hypervisor- vs. Container-based Virtualization of namaken en vertalen?)
 
-\lipsum[7-20]
+
+\section{Container virtualisatie}
+Bij container virtualisatie is de kerngedachte om enkel te virtualiseren wat de applicatie die effectief nodig heeft. De applicatie zelf en alle dependencies die het nodig heeft worden gebundeld in een ‘container’ die overal kan worden gebruikt. In deze vorm van virtualisatie wordt de hardware en besturingssysteem niet gevirtualiseerd, de containers spreken zelf het besturingssysteem van de host aan om procestijd en andere hardware middelen aan te spreken. doordat het beeld, ook image genoemd, van een container minder bijhoud dan dat van een VM zijn ze kleiner en starten ze sneller op. \autocite{Eder2016,jangala2018}
+
+\subsection{Engine}
+Voor het aanmaken en draaien van containers op een systeem is er nood aan een container manager of engine. Met een container engine is het mogelijk om een container image te draaien of aan de hand van een image meerdere containers van dezelfde applicatie te maken. Het de levenscyclus van een container te laten beheren door een engine begint met het ophalen van een container image om van te vertrekken. Deze kunnen gedownload worden van een publieke of privé repository van images. Dit vertrekpunt kan dan verder worden aangepast voor de specifieke applicatie noden vooraleer terug opgeslagen te worden in een repository. Hierna kan de image effectief gebouwd worden om te draaien als een container applicatie. Een container engine kan software zijn die on- premise geïnstalleerd is, waardoor de configuratie zelf te doen is, of het kan worden aangeboden door een Cloud service provider, zodat er in deze Cloud omgeving zonder te veel configuratie met containers kan worden gewerkt. \autocite{Casalicchio2020}
+\subsection{Orchestration}
+Om grotere hoeveelheden diverse container applicaties te kunnen beheren is er Container Orchestration (CO) software. CO is vooral gericht naar het beheren van Multi-level applicaties waar van de delen in containers draaien. Met CO kan er eenvoudiger geconfigureerd worden hoe verschillende container applicatie met elkaar moeten verbinden en is het zelf mogelijk om deze communicatie over meerdere fysieke servers te spreiden. Een andere functionaliteit die CO’s vaak hebben is het beheren van fouttolerantie en het opschalen van aanbod. Hiermee kan er bij toenemende nood aan container applicaties of  bij uitval van een container, extra containers aangemaakt worden en opgenomen worden in het systeem. Ook voor Orchestration is er een onderscheiding tussen on-premise software of CO als deel van het aanbod van een Cloud service provider met container ondersteuning.\autocite{Casalicchio2020,Truyen2019}
+
+//een figuur voor container virtualisatie
+
+\section{Verschillen tussen virtuele machines en containers}
+Een vergelijkende studie tussen Containers en virtuele machine gebaseerde virtualisatie\autocite{Yadav2018} haalt aan dat de verschillende manieren van virtualisatie elk hun voordelen en nadelen hebben en dat het afhangt van de noden van de huidige situatie. Dit onderzoek haalt enkel voordelen aan die containers hebben ten opzichte van VM’s zoals: minder nood aan geheugen ruimte, snellere boot-up en hogere draagbaarheid van containers. Maar haalt ook aan de beveiliging bij containers moeilijker is doordat containers direct de host kernel en hardware aanspreken. In een Cloud omgeving zullen zowel VM’s als container virtualisatie hun plaats hebben. Zo zijn VM’s beter geschikt voor Interface as a Service Cloud solution of situaties waar beveiliging van zeer hoog belang is. Terwijl Containers meer toepasbaar is voor Software as a Service.
+
+Een gelijkaardige studie door \textcite{Eder2018} komt tot gelijkaardige conclusies. VM’s en hypervisors zijn een extra laag beveiliging bij virtualisatie. Containers hebben het voordeel van sneller en eenvoudiger te zijn waardoor ze zeer toepasbaar zijn in de cloud omgeving.
+
+Een onderzoek van \textcite{Abdullah2019} heeft vooral gezocht naar de verschillen in opschalen van Multi-level applicaties in een container of VM gebaseerd netwerk. Zij concludeerden dat container based virtualisatie beter is om toenemende vraag aan te kunnen.
+
+
+\section{korte geschiedenis van container virtualisatie}
+Een oudere manier van container virtualisatie bestaat al lang in de vorm van de \textbf{ch}ange \textbf{root} functionaliteit in unix gebaseerde besturingssystemen. Met Chroot is het sinds 1982 mogelijk om de root directory van proces, en zijn sub processen, aan te passen en zo te limiter waartoe het proces toegang heeft. Vanuit chroot is het Linux containers (LXC) project\footnote{\url{https://linuxcontainers.org/}} gestart en werd het in 2008 mogelijk om Linux gebaseerde container virtualisatie te doen via de ontwikkelde toolkit. Met deze toolkit is het iets eenvoudiger om containers te maken maar is er nog veel kennis van de Linux kernel nodig.\autocite{Eder2016,SenthilKumaran2017}
+\subsection{Docker}
+In 2013 kwam Docker\footnote{\url{https://www.docker.com/}} op de markt en slaagde erin om het werken met Linux gebaseerde container veel te vereenvoudigen ten opzichte van LXC’s toolkit. Door Docker’s succes in het vereenvoudigen van de workflow voor het creëren en draaien van containers is de technologie dan ook in een versnelling terecht gekomen.  Een grote vernieuwingen die Docker zelf bracht was het werken met duidelijke container images voor het maken en bewaren van containers. Hierbij bied het ook de Docker’s hub aan om deze images te bewaren en te delen.\autocite{Eder2016}
+\subsection{Kubernetes}
+Docker heeft zijn eigen OC software maar Google’s Kubernetes\footnote{\url{https://kubernetes.io/}} is toch veel bekender voor orchestration. In 2016 publiceerde google een retrospectieve\autocite{Burns2016} die uitgelegde hoe het al een aantal jaren met Linux gebaseerde containers werkte door middel van oudere orchestration software Borg en Omega. (hier moet nog meer komen)  
+

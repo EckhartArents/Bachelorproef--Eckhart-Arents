@@ -28,10 +28,10 @@ Verder schrijven aan de literatuur en hopelijk een volledig klad te hebben zodat
 Ergens hierna nog eens samen komen
 
 ## 15/03
-Verbeteren  en aanvullen literatuur studie  
+Structureren gedachtes met mindmap, op lijsten alternatieven en methodes. Mogelijk al uitgebreider schrijven in de bp
 
 ## 29/03
-Liefst de literatuur studie deftig afwerken
+uitgebreider schrijven
 
 ## 29/03 
 Grof idee wat er allemaal moet gedaan worden voor de proof of concept voor de gekozen technologieën.

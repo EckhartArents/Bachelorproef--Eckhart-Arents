@@ -31,26 +31,27 @@ Ergens hierna nog eens samen komen
 Structureren gedachtes met mindmap, op lijsten alternatieven en methodes. Mogelijk al uitgebreider schrijven in de bp
 
 ## 29/03
-uitgebreider schrijven
+uitgebreider schrijven & beginen met techologien aan te halen, moet woorden doorgzet in het weekend.
 
 ## 29/03 
-Grof idee wat er allemaal moet gedaan worden voor de proof of concept voor de gekozen technologieën.
+finale aanvulllingen Bachlor literatuur studie
+02/04 literatuurstudie mailen naar promotor
 
 Hier en/of de week ervoor best nog eens samen komen 
 
 ## 05/04 
-Docker gebruiken +1ste mogelijke alternatief. hierbij bijhouden wat er allemaal misging of tegen valt.
+gebruiks vriendelijkheid/geschikt heid van verschillende technologien af te toetsen en op te lijsten. oplijsten welke technolgien effectief eens uit te proberen
 
 ## 12/04 
-2de en (3de) mogelijke alternatief (indien die er zijn)
+Docker gebruiken +1ste mogelijke alternatief. hierbij bijhouden wat er allemaal misging of tegen valt.
 
 Eens samenkomen
 
 ## 19/04 
-Uitwerken concrete proof of concept stappenplan met de beste technologie
+verdere praktishe ondervindingen
 
 ## 26/04 
-van een clean installen eens de proof of concept uitwerken
+Uitwerken concrete proof of concept stappenplan met de beste technologie van een clean installen eens de proof of concept uitwerken
 
 Nog eens samenkomen
 

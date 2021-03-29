@@ -22,10 +22,14 @@ Een eerste manier van virtualisatie is een volledige virtuele machine (VM). Bij 
 
 Omdat een VM beschouwd kan worden als gewoon een deel van het geheugen dat gebruikt wordt om het op te slaan is er nood aan bijkomende software om de VM effectief bruikbaar te maken. Deze bijkomende software wordt een Hypervisor genoemd. De Hypervisor staat voornamelijk in voor het vertalen van input die de VM naar zijn eigen virtuele hardware stuurt te vertalen en om te zetten zodat ze door de werkelijke hardware uitgevoerd kunnen worden. De virtuele kernel van de VM dus dankzij de hypervisor effectief uitgevoerd. Een Hypervisor blijft niet bij het beheren van maar één VM, het laat ook toe om nieuwe VM’s aan te maken door middel van het alloceren van geheugenruimte en de virtuele hardware voor te bereiden om een besturingssysteem op te zetten. Aansluiten laat de Hypervisor dan ook toe dat er meerdere VM’s tegelijkertijd in gebruik kunnen worden genomen.  Vaak laat een hypervisor ook toe om op een eenvoudige manier de VM van buitenaf te bereiken. Hetzij via een bestand locatie te organiseren die je zowel via de VM als van buiten af kunt bereiken of het klaarzetten van virtuele netwerken waarmee de VM’s onderling of naar buiten kunnen communiceren.
 
-Onder Hypervisors zijn er twee verschillende  types te onderscheiden. Type 1 Hypervisors staan zelf direct op de hardware van de machine. Hierdoor heeft de hardware geen directe besturingssysteem, en spreekt de hypervisor direct de machine kernel aan voor de uitvoering van opdrachten. De  een zijn de besturingssystemen die aanwezig zijn enkel deze die als gast door de Hypervisor in een VM worden uitgevoerd op de hardware. Type 2 Hypervisors daarentegen worden uitgevoerd als een gebruikers applicatie binnen een host besturingssysteem.  De VM’s draaien genest in een conventioneel besturingssysteem en omgeving die gebruikt kan worden. een verschil tussen de twee wordt geïllustreerd in figuur 1 \autocite{Yadav2018,Eder2016}.
+Onder Hypervisors zijn er twee verschillende  types te onderscheiden. Type 1 Hypervisors staan zelf direct op de hardware van de machine. Hierdoor heeft de hardware geen directe besturingssysteem, en spreekt de hypervisor direct de machine kernel aan voor de uitvoering van opdrachten. De  een zijn de besturingssystemen die aanwezig zijn enkel deze die als gast door de Hypervisor in een VM worden uitgevoerd op de hardware. Type 2 Hypervisors daarentegen worden uitgevoerd als een gebruikers applicatie binnen een host besturingssysteem.  De VM’s draaien genest in een conventioneel besturingssysteem en omgeving die gebruikt kan worden. Het verschil tussen de twee wordt geïllustreerd in \ref{fig:hyperviors} \autocite{Yadav2018,Eder2016}.
 
-%TODO: figuur 1 maken
-
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/hypervisors.jpg}
+    \label{fig:hyperviors}
+    \caption[Verschil tussen type 1 en type 2 hypervisor]{Dit figuur toont het verschil tussen de locatie van de hypervisor en zijn VM’s ten opzichte van de hardware }
+    \centering
+\end{figure}
 
 \section{Container virtualisatie}
 
@@ -40,14 +44,26 @@ In 2013 kwam Docker\footnote{\url{https://www.docker.com/}} op de markt en slaag
 \subsection{Engine}
 
 Voor het aanmaken en draaien van containers op een systeem is er nood aan een container manager of engine. Met een container engine is het mogelijk om een container image te draaien of aan de hand van een image meerdere containers van dezelfde applicatie te maken. Het effectief draaien van de container wordt gedaan aan de hand van een runtime dat vaak gebundeld zit in de engine de rest van de functionaliteiten is eigen aan de engine. De levenscyclus van een container te laten beheren door een engine begint met het ophalen van een container image om van te vertrekken. Deze kunnen gedownload worden van een publieke of privé repository van images. Dit vertrekpunt kan dan verder worden aangepast voor de specifieke applicatie noden vooraleer terug opgeslagen te worden in een repository. Hierna kan de image effectief gebouwd worden om te draaien als een container applicatie. Een container engine kan software zijn die on- premise geïnstalleerd is, waardoor de configuratie zelf te doen is, of het kan worden aangeboden door een Cloud service provider, zodat er in deze Cloud omgeving zonder te veel configuratie met containers kan worden gewerkt\autocite{Casalicchio2020}.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/container.jpg}
+    \label{fig:Containers}
+    \caption[Schema container virtualisatie]{Een schematische voorstelling van container virtualisatie}
+    \centering
+\end{figure}
 
 \subsection{Orchestration}
 Om grotere hoeveelheden diverse container applicaties te kunnen beheren is er Container Orchestration (CO) software. CO is vooral gericht naar het beheren van Multi-level applicaties waar van de delen in containers draaien. Met CO kan er eenvoudiger geconfigureerd worden hoe verschillende container applicatie met elkaar moeten verbinden en is het zelf mogelijk om deze communicatie over meerdere fysieke servers te spreiden. Een andere functionaliteit die CO’s vaak hebben is het beheren van fouttolerantie en het opschalen van aanbod. Hiermee kan er bij toenemende nood aan container applicaties of  bij uitval van een container, extra containers aangemaakt worden en opgenomen worden in het systeem. Ook voor Orchestration is er een onderscheiding tussen on-premise software of CO als deel van het aanbod van een Cloud service provider met container ondersteuning\autocite{Casalicchio2020,Truyen2019}.
 
-%TODO: een figuur voor container virtualisatie
 
 \section{Verschillen tussen virtuele machines en containers}
 %TODO: zij bij zij vergelijking van contaier en VM + figuur
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/containerVShyper.jpg}
+    \label{fig:containerVShypervisor}
+    \caption[Vergelijking container virtualisatie en type 1 hypervisor]{Een vergelijking in werking tussen container virtualisatie en een type 1 hypervisor voor het draaien van apps}
+    \centering
+\end{figure}
 
 \subsection{Performantie verschillen}
 Een vergelijkende studie tussen Containers en virtuele machine gebaseerde virtualisatie\autocite{Yadav2018} haalt aan dat de verschillende manieren van virtualisatie elk hun voordelen en nadelen hebben en dat het afhangt van de noden van de huidige situatie. Dit onderzoek haalt enkel voordelen aan die containers hebben ten opzichte van VM’s zoals: minder nood aan geheugen ruimte, snellere boot-up en hogere draagbaarheid van containers. Maar haalt ook aan de beveiliging bij containers moeilijker is doordat containers direct de host kernel en hardware aanspreken. In een Cloud omgeving zullen zowel VM’s als container virtualisatie hun plaats hebben. Zo zijn VM’s beter geschikt voor Interface as a Service Cloud solution of situaties waar beveiliging van zeer hoog belang is. Terwijl Containers meer toepasbaar is voor Software as a Service.

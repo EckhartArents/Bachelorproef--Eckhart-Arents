@@ -66,6 +66,7 @@ Om de onderlinge werking en overdraagbaarheid tussen alle mogelijke software te 
 
 
 \subsection{Engines en runtimes}
+Er bestaan meerdere engines en runtimes voor containers. De meerderheid is voor linux gebaseerde containers te draaien. Maar er zijn sommige uitliggers, die mogelijk niet meer volledig ondersteunt zijn.
 
 \paragraph{Docker engine}
 De runtime en daemon waarmee Docker werkt heet de Docker engine. De daemon zelf is gebaseerd op Containers wat hierna besproken wordt. Het werkt via een Command-line-interface (CLI) om zolang dat de daemon draait containers te kunnen starten, aanmaken of verwijderen. Het laat ook toe huidige containers aan te spreken en status op te halen. De Docker engine word voor Mac os en Windows gebundeld met de Docker desktop, een user interface om de werking van de engine te beheren zonder via de CLI  te moeten werken. De Docker engine is dan ook bruikbaar op alle vaak voorkomende besturingssystemen, maar Linux distributies hebben momenteel geen toegang tot de Docker desktop.
@@ -94,13 +95,20 @@ Veel van de volgende opties voor engines zijn niet meer goed ondersteunt.
 
 
 \subsection{Orchestrion}
-%TODO: Aanvullen OC
+Orchestration is een belangrijk deel van de Cloud mogelijkheden van heeft ook verschillende aanbieders van software om dit te organiseren, sommige orchestration software is specifiek voor containers, maar andere laten ook toe om de container orchestration te bundelen met de orchestration voor andere processen zoals klassieke VMs. Voor containers is Kubernetes het meest gekende orchestrations software en volgens onderzoek van \textcite{truyen2019}, ook de software meet de meeste features.  
 \paragraph{Docker compose en swarm}
+Docker compose is het eerste deel van orchestration die deel uitmaakt van Dockers totaalpakket. Het staat in voor het regelen van applicaties die uit meerdere delen bestaan die elk in een eigen container draaien zolang ze behoren tot één Docker engine. Een voorbeeld hiervan is een webapplicatie zoals wordpress met een aparte container voor de SQL-databank.  Docker compose laat een gebruiker toe om via een YAML-file meerdere containers aan elkaar te verbinden en ze later gezamenlijk op te starten en stoppen.
+Docker swarm is het orchestrion gedeelte om over meerdere aparte instanties van Docker engines te werken en werkt ook via een CLI. Hierbij wordt elke instantie van een Docker engine beschouwd als een node binnen de swarm. Er bestaan 2 soorten nodes binnen en Docker swarm. Manager nodes staan in voor het beheren en delegeren van taken binnen een swarm. De worker nodes voeren de takken uitgestuurd door een managers uit. Standaard is een manager ook een worker maar dit kan uitgezet worden. Om een swarm te hebben moet een engine instantie de swarm initiëren en andere eventuele engines zichzelf toevoegen. Via een manager node kunnen de orchestration instellingen die dan gepropageerd worden over de rest van de manager nodes en uitgevoerd door de worker nodes.
 \paragraph{Kubernetes}
+Kubernetes\footnote{\url{https://kubernetes.io/}} is open source orchestration software die container orchestrion toelaat onafhankelijk van de container runtime zolang het de kubernetes CRI implementeert. Het werkt met pods,  sets van bij elkaar horende containers, die behoren tot een fysieke of virtuele machine die de mogelijkheid heeft om de pods te draaien. Elke van deze machines wordt een node genoemd. Elke node krijgt een kublet die instaat voor het organiseren van het draaien van de pods binnen een node. Daarnaast krijgt ook elke node een proxy om te communiceren met de Control Plane. De control plane beheert alle nodes in de cluster en kan op één machine staan of ook gedistribueerd zijn.  standaard werkt kubernetes via command line maar heeft de mogelijkheid om dashboard ui bij te instaleren voor het beheren.
+\paragraph{Red hat Openshift}
+Openshift\footnote{\url{https://www.openshift.com/}} is Red Hat’s uitbreiding en extensie van de kubernetes software om dienst te doen als orchestration software. Openshift wilt toelaten om orchestration gelijktijdig te regelen over eigen on premise servers en servers die van een Cloud hosting provider worden benut. Hier blijft niet enkel bij eigen servers en één Cloud service, het laat zelfs toe om de orchestration te doen over meerde Cloud serviceproviders.
 \paragraph{Nomad}
+Nomad\footnote{\url{https://www.nomadproject.io/}} is een Enterprise gefocuste orchestration software aangeboden door Hashi Corp dat ook gemengde orchestration op grote schaal toelaat. Het verkoopt zichzelf als een lightweight manier om met containers om te gaan als vervanging of aanvulling van kubernetes. Naast een command line interface komt het standaard ook met een web User interface om orchestration te regelen.
 \paragraph{Apache Mesos}
-\paragraph{Openstack}
-\paragraph{openshift}
+Mesos\footnote{\url{http://mesos.apache.org/}} is een orchestrion framework van apache die grotere schaal orchestrion toelaat. Naast containers heeft het ook ondersteuning om Virtuele machines te beheren. Het maakt een abstractie van de kernel over meerdere machine heen om zo in een server context orchestrion te regelen.
+\paragraph{DC/OS}
+De Distributed Cloud Operating System\footnote{\url{https://dcos.io/}} is een open source besturingssysteem dat gebaseerd is op apache mesos om via een singuliere interface meerdere machines te bereiken. Om zo orchestration van containers en meer over de meerdere machines toe te laten.
 \subsection{Image repositories}
 Om container images te kunnen delen met andere zijn er repositories die deze remote kunnen bewaren, Om ze snel te kunnen kopiëren naar een lokale omgeving. Naast de drie die in dit deel besproken worden bieden Cloud providers ook hun eigen repositories aan voor intern binnen hun Cloud omgeving te gebruiken.
 \paragraph{Docker hub}
@@ -108,15 +116,20 @@ De docker hub\footnote{\url{https://hub.docker.com/}} is de grootste en meest ge
 \paragraph{GitHub container registery}
 Github werkt aan een functionaliteit om als gebruiker of onderneming op github container images te bewaren genaamd de  GitHub container registery\footnote{\url{https://docs.github.com/en/packages/guides/about-github-container-registry}}. Het ondersteund zowel Docker’s eigen images als De OCI images. Het is een deel van GitHub’s packages en is momenteel nog in Beta. De container registery wijkt af van de GitHub packages in mate dat de container images niet gekoppeld moeten zijn met een github repository. Hierdoor zijn de toegangsrechten van de images onafhankelijk van eventuele repositories waartoe ze behoren en kunnen deze afzonderlijk ingesteld worden. Bijkomend is het mogelijk om een publiek gedeelde container image anoniem te downloaden wat met gewone packages niet toegestaan is. Tijdens De Beta is het gebruik van de container registery volledig gratis. Eens het uit beta is zal de Container registery samen met de rest van de GitHub packages gefactureerd woorden. Namelijk publieke bestanden gratis, en een limiet op bestands grootte en data overdracht voor private images.
 \paragraph{Gitlab container registery}
-%TODO:  aanvullen gitlab
+De Gitlab container registery\footnote{\url{https://docs.gitlab.com/ee/user/packages/container_registry/}} is gebaseerd op de Dockers container registery. Het laat toe om per Gitlab project een locatie voor container images te alloceren. Voor het ophalen en uploaden van images werkt het met de met de het met de Gitlab CLI. Het laat ook private en publieke images toe, in de vorm van overerving van de toegankelijkheid van het project waartoe de registery behoort. 
 
 
 \subsection{Cloud hosting en services}
-%TODO: aanvullen cloud
+De grootte Cloud hosting en service providers bieden elk ondersteuning voor containers aan en hebben niet veel verschillen op een algemeen vlak.
 \paragraph{Amazon AWS}
-\paragraph{Microsoft Azure}
+Als deel van Amazon’s Cloud services biedt het via AWS\footnote{\url{https://aws.amazon.com/}} toegang tot 3 Container verwante services. De eerste is Het Amazon Elastic Container Registry (ECR). Het ECR is specifiek voor het bewaren van container images en de toegang configuratie tot de registery. De tweede is het Amazon Elastic Container Service (ECS). Het ECS staat in voor het uitvoeren van container gebaseerde applicaties op Amazon’s webhosting services aan de hand van Amazon’s eigen manier van orchestrion. En de derde is het Amazon Elastic Kubernetes Service (EKS). Dit laat ook toe om container gebaseerde applicaties te draaien maar dan met een Kubernetes gebaseerde aanpak voor het beheren en opschalen van de containers. Naast de 3 specifieke services is het ook mogelijk om een container host te installeren op de generische Elastic Compute Cloud webhosting van AWS.
+Microsoft’s azure\footnote{\url{https://azure.microsoft.com/}} heeft ook ondersteuning voor containers met 3 primaire services die nauw lijken op de services van Amazon. Eerst is er de Azure Container Registry (ACR). Het ACR is de container registery methode van azure. De tweede is de Azure Container Instances (ACI). Het ACI is analoog aan  Amazon’s ECS voor het uitvoeren van containers en de bijhorende orchestration. Ten slotte biedt Azure ook Azure Kubernetes Services (AKS) aan. Het AKS is dan de manier om op azure de Kubernetes gebaseerde aanpak te gebruiken. Ook hier is er naast deze servies mogelijk om containers te hosten om Azure’s Web Apps hosting service.
 \paragraph{Google cloud}
-\paragraph{Red Hat OpenStack Platform}
+Google’s cloud\footnote{\url{https://cloud.google.com/}} zet de trend verder met hun Google Container Registry (GCR), Google Cloud Run (GCR) en Google Kubernetes Service (GKE). Deze 3 services zijn elk anoloog an hun equivalenten in AWS en azure. Ook in Google's Cloud is er de mogelijkheid om een container host te installeren om de algemene hosting service Google Compute Engine.
+\paragraph{IBM cloud}
+De IBM cloud\footnote{\url{https://www.ibm.com/cloud}} biedt ook ondersteuning voor containers. Zo heeft het ook een container registery en een kubernetes gebaseerde container hosting service.
+\paragraph{Red Hat OpenStack}
+Voor het werken over verschillende Cloud service providers met Openshift zijn er er momenteel 4 cloud providers die integratie met Openshift hebben. Azure, IMB en AWs hebben een specifieke service voor openShift op hun systeem. Verder bieden Google Cloud en AWS de mogelijkheid om hun hardware te gebruiken om een niet direct met de provider gekoppelde instantie te hosten.
 
 
 

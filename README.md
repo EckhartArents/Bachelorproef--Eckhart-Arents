@@ -40,15 +40,18 @@ finale aanvulllingen Bachlor literatuur studie
 Hier en/of de week ervoor best nog eens samen komen 
 
 ## 05/04 
-gebruiks vriendelijkheid/geschikt heid van verschillende technologien af te toetsen en op te lijsten. oplijsten welke technolgien effectief eens uit te proberen
+gebruiks vriendelijkheid/geschikt heid van verschillende technologien af te toetsen en op te lijsten. oplijsten welke technolgien effectief eens uit te proberen.
+
+Weekend: kuis laptop en ferme backup maken
 
 ## 12/04 
-Docker gebruiken +1ste mogelijke alternatief. hierbij bijhouden wat er allemaal misging of tegen valt.
+Docker gebruiken als controle met docker desktop desktop, waaronder ook kubernetes al in zit, nomad ook?. hierbij bijhouden wat er allemaal misging of tegen valt.
+Podman buldah, kubenetes in een vm met eventuele remote client.
 
-Eens samenkomen
+Eens samenkomen?
 
 ## 19/04 
-verdere praktishe ondervindingen
+een cloud service proberen afhankelijk van het ondereoek van 5 april
 
 ## 26/04 
 Uitwerken concrete proof of concept stappenplan met de beste technologie van een clean installen eens de proof of concept uitwerken

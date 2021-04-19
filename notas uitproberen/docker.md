@@ -69,4 +69,28 @@ Door de volgorde aan te passen word de build veel sneller
 Een eenvoudige 2 containers app met docker desktop (meer bepaald de engine en composer) lukt en is niet al te moelijk.
 voor Linux zou je de huidige status niet in een desktop applicatie zien en moet je apart de engine en composer instaleren. als alles toch voornamelijk uitgelegd word aan de had van de cli zal er weinig verschil zijn. 
 echter hoe je acteraf wsl2 uitschakelt is een mogelijk en probleem
-kubernetics en swarl gebruiken doe ik nadat ik een par andere runtimes uitprobeer, voornamelijk eerst podman en zien in andere vms wat er werkt.
+kubernetics en swarm gebruiken doe ik nadat ik een par andere runtimes uitprobeer, voornamelijk eerst podman en zien in andere vms wat er werkt.
+
+# wordpress
+
+We doen eens een wordpress app met docker want het lijkt mij makkelijker om hier tutorials te vinden in andere omgevingen.
+https://docs.docker.com/compose/wordpress/
+dus ja met docker compose is het snel gebeurt
+
+laten we dit eens proberen met:
+
+# kubernetes gebundeld met Docker
+
+Docker desktop komt met de optie om vlug kubernetes te instaleren
+
+We volgen ook hier eens de kleine tutorial om wordpress met kubernetes te instaleren
+
+kustomization.yaml is indentatie gevoelig
+
+Tiijdens het opstartend van de kubernetis pod werd tijdelijk de verbinding verloren via kubectl
+
+Uiteindelijk lijkt de kubernetes met docker te belastend te zijn voor mijn computer met maar 8 gb ram geheugen
+
+De VM mem van docker gebruikt sowieso al 2+ gb voor het standaard draaien
+
+Misschien dat minikube beter is? 

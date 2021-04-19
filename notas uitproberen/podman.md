@@ -40,4 +40,17 @@ Podman heeft pods voor meerdere samen hangende containers
 
 Het via comand line verbinden lukt me niet, deels omdat de exlorre die het docker voorbeeld gebruikt enkel voor docker netwerken werkt En netwerk configuratie is iets anders voor pods
 
-***voorlopig gestopt*** we proberen het later opniew 
+via comand line verbinden lukt me niet is er mogelijkeih om het te doen via configuratie bestanden
+# podman compose
+
+Om het substitueren van docker verder te zeten bestaat er ook Podman compose
+https://github.com/containers/podman-compose
+is wel nog onder active development
+
+bij het opstarten met een volume geeft de laatste stabiele release een fout, dus instaleer ik de dev versie die deze fout zou moeten opgelost hebben
+
+het nabootsen van het compose gedeelte van de docker todo app tutorial geeft veel warnings en sommige errors met podman compose.
+
+Podman zegt dat de pod met de containers aan het runnen is maar het lukt me niet op het via de ingestelde port te bereiken
+
+Is dit soort verbinden van containers zelfs nodig? Is dit niet ook met kubernetes te doen?

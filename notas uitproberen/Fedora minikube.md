@@ -29,4 +29,17 @@ ook gebruert de coniguratie in de yaml files en moet je niet zelf verbindingen l
 
 ik moet wel nog eens kijken hoe ik precies een egeigen gemaakte image in de minikube kubernetes krijg
 
-hievor zal ik ook nog eens kijken hoe ik met pod,an een image push naar of te wel docker of github.
+hievor zal ik ook nog eens kijken hoe ik met podman een image push naar of te wel docker of github.
+
+# Pullen van GitHub en tonen in minikube en kubernetes
+Publieke images kan kubernetes van overal pullen,  voor private heeft het ondersteuning voor docker hub en google Cloud registery.
+
+Ik probeer eens met de dashboard een pod te starten, hier beeft het de optie op het met een form te doen
+
+Kubernetes geeft geen fout bij het pullen van de publieke repository
+
+Minikube geeft zelf andere ports aan je pods via services.
+
+## Eerst lokaal pullen en dan deze draien in kubernetes?
+Sinds dat prive niet ondersteunt is zou ik willen testen of dat een lokaal bestaande image gebruikt kan worden.
+Een voor de hand liggende manier om lokaal bewaarde images te pakken en te draaien heeft kubernetes niet. Ze stellen voor om hoofdzakelijk te werken met open source images zodat je niet meteen iets te verbergen hebt of als er toch iets gevoelig is het op een lokaal netwerk achter een firewall publiek te zetten om zo op te halen.

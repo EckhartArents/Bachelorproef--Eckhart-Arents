@@ -48,18 +48,15 @@ Weekend: kuis laptop en ferme backup maken
 Docker gebruiken als controle met docker desktop desktop, waaronder ook kubernetes al in zit, nomad ook?. hierbij bijhouden wat er allemaal misging of tegen valt.
 Podman buldah, kubenetes in een vm met eventuele remote client.
 
-Eens samenkomen?
-
 ## 19/04 
-een cloud service proberen afhankelijk van het ondereoek van 5 april
+dit was verder met containers in een VM werken
 
 ## 26/04 
 Uitwerken concrete proof of concept stappenplan met de beste technologie van een clean installen eens de proof of concept uitwerken
 
-Nog eens samenkomen
 
 ## 3/05 
-draft bachlorproef schrijven
+draft bachlorproef schrijven en zien of er nog dingen gedaan moeten worden
 
 ## 10/05 
 draft bachlorproef schrijven 

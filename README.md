@@ -52,7 +52,7 @@ Podman buldah, kubenetes in een vm met eventuele remote client.
 dit was verder met containers in een VM werken
 
 ## 26/04 
-Uitwerken concrete proof of concept stappenplan met de beste technologie van een clean installen eens de proof of concept uitwerken
+laaste te proberen tech voor het moment
 
 
 ## 3/05 
@@ -61,7 +61,9 @@ draft bachlorproef schrijven en zien of er nog dingen gedaan moeten worden
 ## 10/05 
 draft bachlorproef schrijven 
 
-Draft voorlegen en samenkomen
+Draft voorlegen en samenkomen?
+
+in het weekend eens alles zelf lezen voor intenre consitentie 
 
 ## 17/05 
 verbeteren bachlorproef
@@ -69,7 +71,7 @@ verbeteren bachlorproef
 ## 24/05 
 verbeteren bachlorproef
 
-Nog eens samenkomen voor definitief in te dienen
+(Nog eens samenkomen voor definitief in te dienen)?
 Deze week moet de finale versie ook binnen zijn.
 
 ## 31/05 en later 

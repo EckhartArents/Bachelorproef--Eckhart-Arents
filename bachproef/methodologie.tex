@@ -6,8 +6,6 @@
 \label{ch:methodologie}
 In dit deel wordt eerst overlopen aan welke voorwaarden software moet voldoen om te kunnen dienen als leermiddel. Vervolgens worden deze voorwaarden afgetoetst aan de gevonden software om zoo een aantal test omgevingen voor te definiëren. Hierna woorden de resultaten van de tests besproken om af te sluiten met algemeen resultaat.
 
-%% TODO: integreer links en afbeldingen
-
 %% Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
 %% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
 %% op deze manier te werk gegaan bent. Je moet kunnen aantonen dat je de best
@@ -23,6 +21,7 @@ Om software te vinden die toepasbaar is om gebruikt te worden als lesmateriaal m
     \item De software moet op zichzelf of in combinatie met ander software de volledige levenscyclus van containers kunnen tonen en niet te restrictief in gebruik zijn.
     \item Niet te complex zijn om te gebruiken.
     \item Geen verwaarloosde software zijn.
+\end{itemize}
     
 \subsection{Algemene toepassing voorwaarden op gevonden software}
 Door een klassieke VM te gebruiken om daarin te werken kunnen de problemen met de uitvoerbaarheid op het gast besturingssystemen vermeden worden en zal de ingebruikname ook binnen de VM voor alle studenten hetzelfde zijn. Dit heeft ook het voordeel dat het besturingssysteem van de VM een Linux distributie kan zijn, een voorwaarde die nodig is om veel van software te kunnen draaien. De rest van deze sectie zal iets specifieker de gevonden technologieën overlopen.
@@ -43,7 +42,7 @@ De specifieke besturingen systemen orchestration DC/OS en Apache Mesos zijn te g
 \subsection{Image repositories}
 Met dat het OCI en hun container image geslaagd is in de standaardisatie container images zijn repositories vrij met elkaar te verwisselen. De Docker hub en de GitHub container registry zijn de meest geschikt om door een student als image repository te gebruiken.  Docker hub doordat het bijna overal als standaard gebruikt wordt en de GitHub omdat een student wellicht al een GitHub account hebben. Ook de kostenstructuur van de twee is te vergelijken met gratis publieke images en betaling vanaf een bepaalde drempel voor private images. Tijden het schrijven van deze thesis is de GitHub container registry wel no in een bètafase waardoor het volledig gebruik gratis is.
 
-\subsection{Cloud hosting & services}
+\subsection{Cloud hosting en servces}
 Cloud hosting services kunnen een optie zijn maar afhankelijk van de host kan het dat een free trial niet toegang geeft tot alle tools die nodig zijn of is het moeilijk om gratis krediet te krijgen. Zo geeft Amazon geen gratis krediet meer of vraagt Google voor een creditcard.  Verder zal het maken van een image eerst lokaal moeten gebeuren waarvoor een lokale runtime nodig is. Hierdoor kan er even goed in eerste instantie lokaal verder gewerkt worden.
 
 \section{Software Tests}
@@ -80,16 +79,31 @@ In dit deel worden de resultaten en ondervindingen van het werken met de eerder 
 Het eerste dat uitgeprobeerd werd is de Docker desktop geïnstalleerd als applicatie op een laptop met 8 GB ram geheugen.
 
 \paragraph{Installatie en set-up}
-Het werken met Docker desktop direct geïnstalleerd op een Windows systeem moet er eerst het Windows Subsysteem voor Linux ingeschakeld worden. Docker verwijst hiervoor naar de help pagina’s van Microsoft. Omdat ik niet deel been van het Windows insiders program heb ik gewoon de manuele instructies van https://docs.microsoft.com/en-us/windows/wsl/install-win10 gevolgd om tot en met het opzetten van WSL2 als default uit te voeren. Het enigste dat hier wat specifieke aandacht vereist ten opzichte van de beschreven stappen is het controleren of dat de Windows versie geschikt is voor WSL.
+Het werken met Docker desktop direct geïnstalleerd op een Windows systeem moet er eerst het Windows Subsysteem voor Linux ingeschakeld worden. Docker verwijst hiervoor naar de help pagina’s van Microsoft. Omdat ik niet deel been van het Windows insiders program heb ik gewoon de manuele instructies van Microsoft \footnote{\url{https://docs.microsoft.com/en-us/windows/wsl/install-win10}} gevolgd om tot en met het opzetten van WSL2 als default uit te voeren. Het enigste dat hier wat specifieke aandacht vereist ten opzichte van de beschreven stappen is het controleren of dat de Windows versie geschikt is voor WSL.
 
 Hierna werd de installer van Docker desktop uitvoeren, dit heeft een optie om WSL voor de gebruiker voor te bereiden maar omdat dit reeds gedaan heb ik niet kunnen testen of dat dit het volledig ennablen van WSL doet of enkel verantwoordelijk is voor het instellen van een Linux distributie in WSL waarmee de containers zullen worden uitgevoerd.
 
 \paragraph{Ingebruikname}
 Bij het eerste keer opstarten van de desktop applicatie staart het et een korte tutorial die enkel het pullen builden en uitvoeren van een eenvoudige container behandelt,  dit deels op een zeer korte introductie te zijn en te testen of dat de installatie gelukt is. Eveneens is het opstarten van de desktop applicatie de trigger om de backend die alles effectief draait ook te starten.
 
-Vervolgens werd een uitgebreide tutorial van Docker gevolgd; url hier. Deze legde het werken met Docker en Docker compose zorgvuldig uit. Beginnende met een git repository die je zelf moet clonen om daarvan aan de hand van een Dockerfile een image te bouwen. Vervolgens deze image eens lokaal draaien, updaten en pushen naar de Docker hub. De Docker desktop applicatie werd ook gehanteerd om te demonstreren dat je deze dashboard ook je containers kan starten stoppen, pushen of verwijderen. De gepushte image kon vervolgens op een Play with Docker omgeving eens worden uitgevoerd om de overdraagbaarheid te demonstreren. Het werken met volumes voor het persisteren van data werd ook behandelt.
+Vervolgens werd een uitgebreide tutorial van Docker gevolgd\footnote{\url{https://docs.docker.com/get-started/02_our_app/}}. Deze legde het werken met Docker en Docker compose zorgvuldig uit. Beginnende met een git repository die je zelf moet clonen om daarvan aan de hand van een Dockerfile een image te bouwen. Vervolgens deze image eens lokaal draaien, updaten en pushen naar de Docker hub. De Docker desktop applicatie werd ook gehanteerd om te demonstreren dat je deze dashboard ook je containers kan starten stoppen, pushen of verwijderen. De gepushte image kon vervolgens op een Play with Docker omgeving eens worden uitgevoerd om de overdraagbaarheid te demonstreren. Het werken met volumes voor het persisteren van data werd ook behandelt. 
+
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/dockerImg.png}
+    \label{fig:Dockerdesktop}
+    \caption[De Docker desktop applicatie]{De Docker desktop applicatie, dit deel toont alle lokaal bewaarde images}
+    \centering
+\end{figure}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/dockerSample.png}
+    \label{fig:dockerfilevscode}
+    \caption[Een dockerfile in VS code]{de dockerfile om een container  te creëren op basis van een node app, getoond in Visual Studio code}
+    \centering
+\end{figure}
+
 
 Om ook compose en het verbinden van containers te demonstreren werd de data die demonstratie applicatie gebruikt ook een s weggeschreven naar een MySQL databank die in een eigen container draait. Eerst werd dit gedaan door een door Docker aangeboden container te gebruiken om zo een verkenning te doen van het netwerk waarop je Docker instantie staat. Met deze verkenner is het mogelijk om de juiste verbinding tussen de demo app en een mysql databank te leggen. Omdat het manueel verbinden moeilijk kan zijn werd ook Docker compose uitgelegd. Met een YAML-file kan je nodige containers definiëren en confituren dat bij het oproepen van composer ze samen opgestart worden en onmiddellijk verbonden zijn. Deze gebundelde containers worden ook samen getoond in de interface van de desktop applicatie.
+
 
 \paragraph{Ervaring}
 Docker’s gebruik is eenvoudig en is ook veel over te vinden online bij eventuele problemen.  De dokker desktop geeft een grafische interface voor het beheren van draaiende containers en images, maar dit is ook allemaal mogelijk via CLI. Met de voorwaarde hier dat bij het overnemen van commando’s deze soms over meerdere regels gespreid zijn en dus dat de commando prompt van Windows niet voldoende is en overgeschakeld moet worden naar powershell.  De desktop interface maakt het wel gemakkelijk om te beheren of dat je lokale Docker instantie draait waardoor het perfect mogelijk is om het geïnstalleerd te hebben staan en buiten gebruik niet door beïnvloed worden. Het starten en stoppen van Docker in een Linux omgeving is te doen via het proces beheer van Linux zelf.  De configuratie bestanden voor containers zijn geschreven in YAML en Visual studio code heeft zelf extensie om specifiek de Docker bestanden te ondersteunen.
@@ -101,8 +115,20 @@ Bij de verse installatie van een Fedora workstation versie 53 was Podman al inbe
 
 \paragraph{Ingebruikname}
 Het reproduceren van de stappen van de Docker tutorial lukte eerst goed.  Het pullen, builden of draaien van images lukt analoog als met de Docker engine. Inclusief het gebruiken van dezelfde bestanden voor het definiëren van een container vooraleer deze te builden.  Bij het persisteren met volumes is ook geen verschil.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/podmanbuild.png}
+    \label{fig:podmanbuild}
+    \caption[Een dockerfile in VS code om met podman te builden]{Hier maakt Podman met het inhoudelijk zelfde docker-/containerfile as Docker een image}
+    \centering
+\end{figure}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/podmanrun.png}
+    \label{fig:podmanrun}
+    \caption[Podman die een web ap uitvoert]{hier is via command line de aangemaakte container gestart en wort deze op de achtergrond getoont in een webbrowser}
+    \centering
+\end{figure}
 
-Bij Podman was het lokaal verbinden moeilijker. Het werken met Podman ingebouwde pods is minder goed uitgelegd dan het werken met Docker en het manueel verbinden.  Er bestaat ook een project om Docker compose na te bootsen voor Podman genaamd Podman compose https://GitHub.com/containers/Podman-compose.  Hiermee kan je ook onmiddellijk meerdere containers samen laten bundelen en draaien, echter ook hier is het werken met de pod om de juiste poorten te zetten om te kunnen zien of dat het werkt een probleem.
+Bij Podman was het lokaal verbinden moeilijker. Het werken met Podman ingebouwde pods is minder goed uitgelegd dan het werken met Docker en het manueel verbinden.  Er bestaat ook een project om Docker compose na te bootsen voor Podman genaamd Podman Compose\footnote{\url{https://GitHub.com/containers/Podman-compose}} .  Hiermee kan je ook onmiddellijk meerdere containers samen laten bundelen en draaien, echter ook hier is het werken met de pod om de juiste poorten te zetten om te kunnen zien of dat het werkt een probleem.
 
 \paragraph{Ervaring}
 Het werken met Docker en Podman voor eenvoudige containers te draaien lijkt sterk op elkaar, veel commando’s zijn hetzelfde en geven ook een gelijkaardig resultaat. Doordat het standaard met Fedora gebundeld is was de installatie geen probleem. Ook moet voor het te kunnen gebruiker niet zelf de lokale Podman runtime starten vooraleer je deze kan gebruiken. Echter het werken met de pods van Podman is moeilijker dan met de eenvoudige verbinding die je met Docker kan leggen.
@@ -142,11 +168,17 @@ Minikube raad ook aan om Cri-o te hebben om Podman te gebruiken als engine in pl
 \paragraph{Ingebruikname}
 Het werken met de GitHub container registry in Podman is volledig analoog met de werking in Docker. Podman zoek ook standaard eerst op Docker hub dus moet er manueel gespecificeerd worden dat je een ander registry wilt gebruiken. Tijdens het werken met Podman en GitHub werd er ook een recent gepubliceerd blog van de Fedora Magazine die eens overloopt hoe je met Podman minder grote container images kan maken. Door in het Dockerfile of container file voor je container image optionele dependencies en feature die standaard in je base image staan te verwijderen kan je image grootte verkleind worden. De blog gaf ook een voorbeeld voor het werken met Buildah voor het maken van een image zonder een base image te hebben, maar installatie van Buildah lukte niet.
 
-De ondersteuning die Minikube heeft voor Podman op het moment van dit onderzoek in nog steeds in een experimentele fase. Bij een eerste keer proberen starten van Minikube met Podman en Cri-o voor driver en effectieve runtime kwam er een gekende fout. Het oplossen van deze fout die eigen is aan Podman wordt uitgelegd op de Minikube help pagina’s voor Podman https://minikube.sigs.k8s.io/docs/drivers/Podman/. Door de fout op te lossen kan Minikube, en alle emoticons die het gebruikt, gestart worden.
+De ondersteuning die Minikube heeft voor Podman op het moment van dit onderzoek in nog steeds in een experimentele fase. Bij een eerste keer proberen starten van Minikube met Podman en Cri-o voor driver en effectieve runtime kwam er een gekende fout. Het oplossen van deze fout die eigen is aan Podman wordt uitgelegd op de Minikube help pagina’s voor Podman\footnote{\url{https://minikube.sigs.k8s.io/docs/drivers/Podman/}} . Door de fout op te lossen kan Minikube, en alle emoticons die het gebruikt, gestart worden.
 
 Eens Minikube opgestart kan met een lokale instantie van Kubernetes gewerkt worden. Minikube komt met de command line interface voor Kubernetes. Zo is het mogelijk om aan Minikube doorgegeven welke kubectl commando’s moeten worden uitgevoerd. Het is echter ook mogelijk om individueel kubectl te installeren, Minikube zal bij het opstarten er zelf voor zorgen dat deze lokale installatie uitgevoerd wordt op de cluster die Minikube beheerd.  Minikube commando’s staan in voor het beheren van de cluster in zijn geheel zoals het starten stoppen of blootstellen van containers naar buiten. Kubectl is de tool om te werken binnen de cluster en met de containers erin.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/kubenetesDash.png}
+    \label{fig:kubenetesDash}
+    \caption[the kubenetes Dashboard]{hier toont de Kubernetes dashboard dat een nieuwe pod van de hellominikube container recent gestart is}
+    \centering
+\end{figure}
 
-Met de lokale Kubernetes instantie is het verder gelukt om Kubernetes uit te proberen. Op basis van een standaardvoorbeeld voor Wordpress en MySQL https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/ lukt het om snel de nodige Kustomization.yaml file aan te maken een door te geven aan Kubernetes via kubectl. Het openzetten naar buiten toe gaat dan via Minikube. Verder laat Minikube je ook toe om vlug de browser gebaseerde dashboard van je lokale instantie te openen. Hiermee kan je veel van de functionaliteiten van Kubernetes ook doen. Inclusief een publieke image van de GitHub container registry via deze interface pullen en onmiddellijk starten. Kubernetes heeft echter geen voor de hand liggende methode om lokaal bewaarde images of private images te gebruiken bij het starten van een container.
+Met de lokale Kubernetes instantie is het verder gelukt om Kubernetes uit te proberen. Op basis van een standaardvoorbeeld voor Wordpress en MySQL\footnote{\url{https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/}}  lukt het om snel de nodige Kustomization.yaml file aan te maken een door te geven aan Kubernetes via kubectl. Het openzetten naar buiten toe gaat dan via Minikube. Verder laat Minikube je ook toe om vlug de browser gebaseerde dashboard van je lokale instantie te openen. Hiermee kan je veel van de functionaliteiten van Kubernetes ook doen. Inclusief een publieke image van de GitHub container registry via deze interface pullen en onmiddellijk starten. Kubernetes heeft echter geen voor de hand liggende methode om lokaal bewaarde images of private images te gebruiken bij het starten van een container.
 
 \paragraph{Ervaring}
 Podman met GitHub container registry was zeer makkelijk en was zoals vermeld volledig analoog aan de Docker methode. De blogpost gaf een korte uitleg over hoe een container file verder aangepast kan worden om bepaalde zaken te configureren. Jammer genoeg lukte Buildah niet door een conflict tijdens de installatie met de al geïnstalleerde Podman. Buildah zou ook enkel nodig zijn ov vanaf nul een nieuwe image te maken en het juist kunnen werken met een vertrekpunt voor images acht ik belangrijker dus is Podman’s build voldoende.
@@ -162,11 +194,40 @@ Hiervoor weer de Ubuntu deels om te zien of dat het installeren van Docker zou l
 De Docker engine installeren en opstarten lukt zonder problemen. Ook het installeren van Nomad zelf gaf geen complicaties.
 \paragraph{Ingebruikname}
 Na het installeren van de Docker engine werd er eerst getest of dat alles  werkte zoals het direct op de laptop lukte. Hierbij werden geen problemen ondervonden. Hierna werd een dev omgeving Nomad instantie opgestart om eens mee te werken.
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/nomadrun.png}
+    \label{fig:nomadrun}
+    \caption[Een voorbeeld Nomad job]{hier wordt via de cli van Nomad de example.nomad job gestart}
+    \centering
+\end{figure}
+\begin{figure}[h]
+    \includegraphics[width=\linewidth]{img/nomdaddash.png}
+    \label{fig:nomdaddash}
+    \caption[de nomad dashboard]{de dashboard weergave om een job te starten met Nomad}
+    \centering
+\end{figure}
 
-Hashi Corp heeft een kort tutorial die een inleiding geeft tot het werken met Nomad. Het legt uit wat de workflow is een geeft een voorbeeld toegepast op een kleine container image.  Hier wordt hun eigen .nomad bestandsindeling eens aangehaald die gebruikt wordt voor het configureer van de “jobs” of taken die Nomad moet uitvoeren. Om Nomad iets te laten doen moet eerst een job bestand gemaakt worden. Deze moet vervolgens via command line of de web interface ingepland worden en vervolgens nog eens afzonderlijk uitgevoerd worden. Een enkele container draaien en dupliceren lukte maar het achterhalen hoe een Wordpress site te draaien lukte niet.
+Hashi Corp heeft een korte tutorial\footnote{\url{https://learn.hashicorp.com/collections/nomad/get-started}} die een inleiding geeft tot het werken met Nomad. Het legt uit wat de workflow is een geeft een voorbeeld toegepast op een kleine container image.  Hier wordt hun eigen .nomad bestandsindeling eens aangehaald die gebruikt wordt voor het configureer van de “jobs” of taken die Nomad moet uitvoeren. Om Nomad iets te laten doen moet eerst een job bestand gemaakt worden. Deze moet vervolgens via command line of de web interface ingepland worden en vervolgens nog eens afzonderlijk uitgevoerd worden. Een enkele container draaien en dupliceren lukte maar het achterhalen hoe een Wordpress site te draaien lukte niet.
 
 \paragraph{Ervaring}
 Door Nomad werking met jobs voor alle taken is er een duidelijk verschil met Kubernetes. Een groot voordeel is dat Nomad meer kan beheren dan enkel containers. Maar het heeft zeker zijn minpunten. Zo is de eigen markup voor de configuratie een bijkomende barrière voor het werken met Nomad in vergelijking met de al veelgebruikte YAML die Docker, Podman en Kubernetes allemaal gebruiken.  Visual studio code heeft gelukkig een extensie voor de Configuratie Taal die hashicorp gebruikt die het werken met deze .Nomad  bestanden helpt. Nomad heeft ook een web browser gebaseerde interface maar deze toont niet wat een equivalent commando voor de command line zou zijn. Het is ook in het algemeen minder gebruikt dan Kubernetes waardoor uitleg en integratie minder is.  
 
-\section{Samengevatte resultaten}
-%% TODO: write section
+\section{Samengevatte resultaten software Tests}
+%% TODO: insert table comarisons?
+Dit deel vergelijkt samengevat eens de technologieën die gebruikt zijn. Enkel voor orchestration is er een duidelijke voorkeur voor Kubernetes als leermiddel.
+
+\subsection{Runtimes}
+
+In basis gebruik lijken Docker en Podman goed op elkaar. De grootste verschillen zitten in de installatie en de eigen werking voor meerdere samenhangende containers. Qua installatie komt Podman standaard geïnstalleerd in Fedora, en moet Docker altijd geïnstalleerd worden. De Docker compose die afhankelijk afzonderlijk geïnstalleerd moet worden maakt het verbinden van container mogelijk  Het equivalent in Podman met de pods is iets complexer en zelfs met een extra overbrugging van Podman Compose niet voor de hand liggend. Echter deze verbinding tussen container kan ook gedaan worden in Kubernetes en is bij gebruik van Kubernetes niet meer zo belangrijk.
+
+Verder is de Docker desktop voor het leren maar een kleine meerwaarde. Het is ten eerste niet beschikbaar op linux systemen. Ten tweede moeten veel functionaliteiten nog via de command line uitgevoerd worden. De desktop applicatie een overzicht van lokale images het maken van een nieuwe image moet via command line interface. Ten derde is de gebundelde Kubernetes zwaarder dan een Kubernetes instantie met Minikube.
+
+\subsection{Repositories}
+
+Tussen de twee gebruikte repository is er niet meteen een de beter is dan de andere. De Docker hub wordt door zowel Docker als Podman gebruikt als standaard doel om image te pushen. Dit beteken dat er weinig aangepast moet worden om effectief te pushen of pullen. Echter de Docker hub zet standaard images publiek en heeft maar een private image mogelijkheid voor gratis accounts. De GitHub container registry daarentegen zou een beetje extra werk vragen om het doel voor het pushen van een image te selecteren. Het zou wel geen extra account nodigen hebben als de student al reeds met GitHub werkt. Over de specifieke kosten en regeling van de GitHub container registry kan er nog geen uitspraak gedaan worden doordat deze nog in bèta fase is. Zou het zelfde limiet  van 500 mb voor private containers gelden als op de rest van GitHub packages zou deze te klein zijn om meer te beteken dan één of enkele private images.
+
+\subsection{Orchestration}
+
+Voor orchestration is Kubernetes de beste van de twee geteste voor het werken met containers. Zo heeft het een dashboard weergave die niet alleen de noodzaak voor het werken via command line minimaliseert, het toont ook bij het uitvoeren van taken via deze dasboard de equivalente commando’s om het via cli te doen. Om met Kubernetes te leren werken is de beschikbaarheid Minikube ook een pluspunt. Minikube helpt om een lokale Kubernetes cluster op te starten en beheren. Verder kan Minikube ook de juiste verbindingen maken om een keuze aan achterliggende runtime te hebben.  Minikube heeft de beste ondersteuning voor Docker als engine maar kan met wat extra configuratie een het installeren kan Cri-o als hulpstuk ook met Podman als runtime werken. één van de grotere minpunten die eigen is aan Kubernetes is dat het moeilijk is om containers te draaien op basis van lokaal bewaarde images of privé bewaard in een repository.
+
+Om specifiek met containers te werken is Nomad minder aan te raden. De hasicorp configuration language is ook een extra stap in het leerproces. Het kan dat een student Yaml dei Kubernetes gebruikt nog niet gezien heeft, maar de kans is groter dat de student ook Yaml elders zal tegenkomen dan de Hasicorp markup. Ook iets dat het leren ten nadele zou komen ten opzichte van Kubernetes is dat de dashboard niet de equivalente commando’s toont, dit is deels toe te kennen aan de methodologie van Nomad om aanpassingen aan je draaiende containers te doen op basis van jobs, die telkens geschreven moeten worden in de hasicorp configuration language.

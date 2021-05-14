@@ -14,5 +14,13 @@
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
 
-\lipsum[76-80]
+Zeer grof een klad 
+
+best om vm te werken; vereisten min 4gb ram; 2cpu;  meer dan 20 gb schijfruimte, webbrowser en internet.
+directe werken met containers is in Fedora met Podman het snelst, voor docker extra installatie en mogelijk zelf daemon regelen. Multicontainer zonder kubernetes is Dockers met compose het zekerst. De rest van runtime zijn te complex, niche of os specifiek.
+voor regesteries is Dockers hub het  zekerst, maar kan GitHub beter zijn afhankelijk van de status na de bèta
+Kubernetes met Minikube het beste, Nomad niet aan te raden. Andere zijn te specifiek voor os of onmiddellijk Cloud gebaseerd(opensift)
+Cloud services, voor maken nieuwe image toch eerst lokaal, dus de rest kan ook lokaal
+voor een stappenplan om alles eens te doen. Een image pullen en draaien, op basis van een node of ander applicatie die wegschrijft naar bestanden een image maken. Volume gebruiken voor deze weggeschreven warden te persisteren. Deze eens pushen. In Kubernetes deze zelfde applicatie pullen en draaien, met Kubernetes ook een wordpress instantie starten.
+
 

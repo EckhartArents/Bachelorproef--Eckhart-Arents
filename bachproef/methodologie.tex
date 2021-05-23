@@ -31,16 +31,83 @@ Met uitzondering van technologieën die op Cloud berusten, de repositories of vo
 \subsection{Engines en runtimes}
 Qua geschiktheid om als runtime komen Docker engine en Podman het beste uit. Docker Dankzij zijn populariteit en veelvuldigheid. Hiermee is er ook veel onlinehulp te vinden voor het gebruik van Docker. Podman ’s vriendelijkheid als leermiddel is deels te danken doordat het zich opstelt als een duidelijk alternatief voor Docker op Linux distributies. De directe hulp een uitleg om met Podman te werken mag dan al iets minder zijn, die werking van Podman zou kort beschreven kunnen worden als hetzelfde als dat van Docker qua commando’s met een ingebouwde ondersteuning voor pods van meerdere containers.  Verder zou Containerd ook nog een alternatief kunnen zijn maar dan nipt op de rand van de complexiteit, zeker in vergelijking met Podman en Docker.
 
-Om zelf te werken met Linux containers is te complex om een goede introductie tot containers te zijn. Windows containers zijn enkel mogelijk op bepaalde distributie van Windows en berusten verder op de Docker engine voor de uitvoering, hierdoor is de extra stap om met deze containers te werken ten opzichte van Docker geen meerwaarde als inleiding. Een gebrek aan uitleg voor het gebruik van cri-o doet twijfelen aan de geschiktheid voor Cri-o als runtime.  Het unieke verkooppunt van Kata containers, de mogelijkheid om ook VM’s als containers te draaien is een stap in complexiteit te ver om een goede inleiding to container virtualisatie te zijn.  De rest van de gevonden runtimes zijn te klein of al te lang zonder ondersteuning om met zekerheid te kunnen zeggen dat ze relevant zullen blijven voor containers en verwante technologieën.
+Om zelf te werken met Linux containers is te complex om een goede introductie tot containers te zijn. Windows containers zijn enkel mogelijk op bepaalde distributie van Windows en berusten verder op de Docker engine voor de uitvoering, hierdoor is de extra stap om met deze containers te werken ten opzichte van Docker geen meerwaarde als inleiding. Een gebrek aan uitleg voor het gebruik van cri-o doet twijfelen aan de geschiktheid voor Cri-o als runtime.  Het unieke verkooppunt van Kata containers, de mogelijkheid om ook VM’s als containers te draaien is een stap in complexiteit te ver om een goede inleiding to container virtualisatie te zijn.  De rest van de gevonden runtimes zijn te klein of al te lang zonder ondersteuning om met zekerheid te kunnen zeggen dat ze relevant zullen blijven voor containers en verwante technologieën \ref{tab:Engines}. 
+
+\begin{center}
+    \begin{table}
+    \begin{tabular}{ m{3.5cm} || m{1cm} | m{3.3cm} | m{4.5cm} }
+        Engine/container & Gratis & Besturingssysteem restricties & Bijkomende complexiteit t.o.v. Docker \\ 
+        \hline
+        Docker & ja & geen &  \\  
+        \hline
+        Containerd & ja & De meeste Linux distributies & Werkt voor sturing met Go programma’s \\
+        \hline 
+        Linuxcontainers & ja & Linux & Zelf configureren via het besturingssysteem \\
+        \hline
+        Cri-o & ja & De meeste Linux distributies & Enkel voor werking met Kubernetes \\
+        \hline
+        Podman & ja & De meeste Linux distributies & Veel overgenomen van Docker + Ingebouwde pods \\
+        \hline
+        Windows containers & ja & Windows, exlusief Home Edities & Werkt enkel met Docker/ Niet van toepassing \\
+        \hline
+        PouchContainer & ja & Ubuntu of CentOS & Slechte documentatie \\
+        \hline
+        Kata containers & ja & De meeste Linux distributies & Extra Configuratie, nood aan Containerd of Cri-o voor uitvoering \\
+    \end{tabular}
+    \label{tab:Engines}
+    \caption[Overzicht Runtimes en containers]{Een overzicht van gevonden runtimes of containers met hun restricties en toegevoegde complexiteit.}
+    \end{table}
+\end{center}
 
 \subsection{Orchestration}
 Docker compose is een uitbreiding van de Docker engine en is daarmee ook gratis en heeft dezelfde vereisten als Docker, het wordt zelf standaard geïnstalleerd met de Docker desktop applicatie. Kubernetes en Nomad zijn verder nog twee softwarepakketten die goed zouden kunnen zijn om met te leren. Kubernetes is de meest gebruikte orchestration software en is daarmee zoals Docker voorzien van veel online tutorial. Het is open source en kan met veel van de runtimes werken. Voor het leren werken met Kubernetes is er ook Minikube die je lokaal in staat stel met Kubernetes te werken. Nomad is orchestration software die lijkt op Kubernetes maar toch zichzelf wilt onderscheiden van Kubernetes door meer dan alleen containers te kunnen beheren. 
 
-De specifieke besturingen systemen orchestration DC/OS en Apache Mesos zijn te gelimiteerd tot het besturingssysteem en verder ook te complex om een duidelijke introductie te zijn tot container virtualisatie.  Openshift is een te commercieel en bedrijfsgericht product om makkelijk in gebruikt e worden genomen. En tenslotte is er nog de Docker swarm die zelf aan populariteit verliest ten opzichte van Kubernetes als software voor orchestration.
+De specifieke besturingen systemen orchestration DC/OS en Apache Mesos zijn te gelimiteerd tot het besturingssysteem en verder ook te complex om een duidelijke introductie te zijn tot container virtualisatie.  Openshift is een te commercieel en bedrijfsgericht product om makkelijk in gebruikt e worden genomen. En tenslotte is er nog de Docker swarm die zelf aan populariteit verliest ten opzichte van Kubernetes als software voor orchestration \ref{tab:Ochestration}.
+\begin{center}
+    \begin{table}
+        \begin{tabular}{ m{3cm} || m{1.5cm} | m{3.3cm} | m{4.5cm} }
+            Software & Gratis & Besturingssysteem restricties & Bijkomende complexiteit t.o.v. Docker \\ 
+            \hline
+            Docker Compose & ja & geen &  \\  
+            \hline
+            Docker Swarm & ja & geen & \\
+            \hline 
+            Kubernetes & ja & geen & Minikube als middleware voor lokale uitvoering \\
+            \hline
+            OpenShift & 30-day trail & Red Hat Besturingsystemen & Zelf Datacenter opzetten of Cloud gebruiken \\
+            \hline
+            Nomad & ja & geen & Eigen configuratie taal \\
+            \hline
+            Apache Mesos & ja & geen & Met binairy of zelf lokaal builden.  \\
+            \hline 
+            DC/OS & ja & DC/OS & Zelf datacenter opzetten \\
+        \end{tabular}
+        \label{tab:Ochestration}
+        \caption[Overzicht ochestration]{Een overzicht van gevonden Ochestration software met hun restricties en toegevoegde complexiteit.}
+    \end{table}
+\end{center}
 
 
 \subsection{Image repositories}
-Met dat het OCI en hun container image geslaagd is in de standaardisatie container images zijn repositories vrij met elkaar te verwisselen. De Docker hub en de GitHub container registry zijn de meest geschikt om door een student als image repository te gebruiken.  Docker hub doordat het bijna overal als standaard gebruikt wordt en de GitHub omdat een student wellicht al een GitHub account hebben. Ook de kostenstructuur van de twee is te vergelijken met gratis publieke images en betaling vanaf een bepaalde drempel voor private images. Tijden het schrijven van deze thesis is de GitHub container registry wel no in een bètafase waardoor het volledig gebruik gratis is.
+Met dat het OCI en hun container image geslaagd is in de standaardisatie container images zijn repositories vrij met elkaar te verwisselen. De Docker hub en de GitHub container registry zijn de meest geschikt om door een student als image repository te gebruiken.  Docker hub doordat het bijna overal als standaard gebruikt wordt en de GitHub omdat een student wellicht al een GitHub account hebben. Ook de kostenstructuur van de twee is te vergelijken met gratis publieke images en betaling vanaf een bepaalde drempel voor private images. Tijden het schrijven van deze thesis is de GitHub container registry wel no in een bètafase waardoor het volledig gebruik gratis is \ref{tab:repositories}.
+\begin{center}
+    \begin{table}
+        \begin{tabular}{ m{3.5cm} || m{2cm} | m{3.3cm} | m{4.5cm} }
+            Repository & Gratis Account & Limiet gratis privé images & Overdracht limiet \\ 
+            \hline
+            Docker hub & ja & 1 image & 100 per 6 uur anoniem en 200 per 6 uur ingelogd
+             \\  
+            \hline
+            GitHub Container Registry & ja & 500 mb* & Niet gespecifieerd \\
+            \hline 
+            Gitlab Container Registry & 30-day trail & Niet gespecifieerd & Niet gespecifieerd \\
+            \multicolumn{4}{c}{ } \\
+            \multicolumn{4}{l}{*In beta waren geen limieten van toepassing, het zal de Github Packages limieten delen.} \\
+        \end{tabular}
+        \label{tab:repositories}
+        \caption[Overzicht image repositories]{Een overzicht van gevonden image repositories met hun limieten voor gratis accounts.}
+    \end{table}
+\end{center}
 
 \subsection{Cloud hosting en servces}
 Cloud hosting services kunnen een optie zijn maar afhankelijk van de host kan het dat een free trial niet toegang geeft tot alle tools die nodig zijn of is het moeilijk om gratis krediet te krijgen. Zo geeft Amazon geen gratis krediet meer of vraagt Google voor een creditcard.  Verder zal het maken van een image eerst lokaal moeten gebeuren waarvoor een lokale runtime nodig is. Hierdoor kan er even goed in eerste instantie lokaal verder gewerkt worden.
@@ -86,7 +153,7 @@ Hierna werd de installer van Docker desktop uitvoeren, dit heeft een optie om WS
 \paragraph{Ingebruikname}
 Bij het eerste keer opstarten van de desktop applicatie staart het et een korte tutorial die enkel het pullen builden en uitvoeren van een eenvoudige container behandelt,  dit deels op een zeer korte introductie te zijn en te testen of dat de installatie gelukt is. Eveneens is het opstarten van de desktop applicatie de trigger om de backend die alles effectief draait ook te starten.
 
-Vervolgens werd een uitgebreide tutorial van Docker gevolgd\footnote{\url{https://docs.docker.com/get-started/02_our_app/}}. Deze legde het werken met Docker en Docker compose zorgvuldig uit. Beginnende met een git repository die je zelf moet clonen om daarvan aan de hand van een Dockerfile, te zien in figuur \ref{fig:dockerfilevscode}, een image te bouwen. Vervolgens deze image eens lokaal draaien, updaten en pushen naar de Docker hub. De Docker desktop applicatie werd ook gehanteerd om te demonstreren dat je deze dashboard ook je containers kan starten stoppen, pushen of verwijderen. een voorbeeld van hoe de desktop applicatie eruit ziet is in figuur \ref{fig:Dockerdesktop} te zien. De gepushte image kon vervolgens op een Play with Docker omgeving eens worden uitgevoerd om de overdraagbaarheid te demonstreren. Het werken met volumes voor het persisteren van data werd ook behandelt. 
+Vervolgens werd een uitgebreide tutorial van Docker gevolgd\footnote{\url{https://docs.docker.com/get-started/02_our_app/}}. Deze legde het werken met Docker en Docker compose zorgvuldig uit. Beginnende met een git repository die je zelf moet clonen om daarvan aan de hand van een Dockerfile, te zien in listing \ref{lst:Dockerfile}, een image te bouwen. Vervolgens deze image eens lokaal draaien, updaten en pushen naar de Docker hub. De Docker desktop applicatie werd ook gehanteerd om te demonstreren dat je deze dashboard ook je containers kan starten stoppen, pushen of verwijderen. een voorbeeld van hoe de desktop applicatie eruit ziet is in figuur \ref{fig:Dockerdesktop} te zien. De gepushte image kon vervolgens op een Play with Docker omgeving eens worden uitgevoerd om de overdraagbaarheid te demonstreren. Het werken met volumes voor het persisteren van data werd ook behandelt. 
 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/dockerImg.png}
@@ -94,12 +161,15 @@ Vervolgens werd een uitgebreide tutorial van Docker gevolgd\footnote{\url{https:
     \caption[De Docker desktop applicatie]{De Docker desktop applicatie, dit deel toont alle lokaal bewaarde images}
     \centering
 \end{figure}
-\begin{figure}[h]
-    \includegraphics[width=\linewidth]{img/dockerSample.png}
-    \label{fig:dockerfilevscode}
-    \caption[Een dockerfile in VS code]{de dockerfile om een container  te creëren op basis van een node app, getoond in Visual Studio code}
-    \centering
-\end{figure}
+\begin{lstlisting}[caption=inhoud van de Dockerfile,label=lst:Dockerfile]
+    FROM node:12-alpine
+    RUN apk add --no-cache python g++ make
+    WORKDIR /app
+    COPY package.json yarn.lock ./
+    RUN yarn install --production
+    COPY . .
+    CMD ["node", "src/index.js"]
+\end{lstlisting}
 
 
 Om ook compose en het verbinden van containers te demonstreren werd de data die demonstratie applicatie gebruikt ook een s weggeschreven naar een MySQL databank die in een eigen container draait. Eerst werd dit gedaan door een door Docker aangeboden container te gebruiken om zo een verkenning te doen van het netwerk waarop je Docker instantie staat. Met deze verkenner is het mogelijk om de juiste verbinding tussen de demo app en een mysql databank te leggen. Omdat het manueel verbinden moeilijk kan zijn werd ook Docker compose uitgelegd. Met een YAML-file kan je nodige containers definiëren en confituren dat bij het oproepen van composer ze samen opgestart worden en onmiddellijk verbonden zijn. Deze gebundelde containers worden ook samen getoond in de interface van de desktop applicatie.

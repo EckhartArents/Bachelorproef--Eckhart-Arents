@@ -22,12 +22,12 @@ Een eerste manier van virtualisatie is een volledige virtuele machine (VM). Bij 
 
 Omdat een VM beschouwd kan worden als gewoon een deel van het geheugen dat gebruikt wordt om het op te slaan is er nood aan bijkomende software om de VM effectief bruikbaar te maken. Deze bijkomende software wordt een Hypervisor genoemd. De Hypervisor staat voornamelijk in voor het vertalen van input die de VM naar zijn eigen virtuele hardware stuurt te vertalen en om te zetten zodat ze door de werkelijke hardware uitgevoerd kunnen worden. De virtuele kernel van de VM dus dankzij de hypervisor effectief uitgevoerd. Een Hypervisor blijft niet bij het beheren van maar één VM, het laat ook toe om nieuwe VM’s aan te maken door middel van het alloceren van geheugenruimte en de virtuele hardware voor te bereiden om een besturingssysteem op te zetten. Aansluiten laat de Hypervisor dan ook toe dat er meerdere VM’s tegelijkertijd in gebruik kunnen worden genomen.  Vaak laat een hypervisor ook toe om op een eenvoudige manier de VM van buitenaf te bereiken. Hetzij via een bestand locatie te organiseren die je zowel via de VM als van buiten af kunt bereiken of het klaarzetten van virtuele netwerken waarmee de VM’s onderling of naar buiten kunnen communiceren.
 
-Onder Hypervisors zijn er twee verschillende  types te onderscheiden. Type 1 Hypervisors staan zelf direct op de hardware van de machine. Hierdoor heeft de hardware geen directe besturingssysteem, en spreekt de hypervisor direct de machine kernel aan voor de uitvoering van opdrachten. De  een zijn de besturingssystemen die aanwezig zijn enkel deze die als gast door de Hypervisor in een VM worden uitgevoerd op de hardware. Type 2 Hypervisors daarentegen worden uitgevoerd als een gebruikers applicatie binnen een host besturingssysteem.  De VM’s draaien genest in een conventioneel besturingssysteem en omgeving die gebruikt kan worden. Het verschil tussen de twee wordt geïllustreerd in \ref{fig:hyperviors} \autocite{Yadav2018,Eder2016}.
+Onder Hypervisors zijn er twee verschillende  types te onderscheiden. Type 1 Hypervisors staan zelf direct op de hardware van de machine. Hierdoor heeft de hardware geen directe besturingssysteem, en spreekt de hypervisor direct de machine kernel aan voor de uitvoering van opdrachten. De  een zijn de besturingssystemen die aanwezig zijn enkel deze die als gast door de Hypervisor in een VM worden uitgevoerd op de hardware. Type 2 Hypervisors daarentegen worden uitgevoerd als een gebruikers applicatie binnen een host besturingssysteem.  De VM’s draaien genest in een conventioneel besturingssysteem en omgeving die gebruikt kan worden. Het verschil tussen de twee wordt geïllustreerd in figuur \ref{fig:hyperviors} \autocite{Yadav2018,Eder2016}.
 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/hypervisors.jpg}
-    \label{fig:hyperviors}
     \caption[Verschil tussen type 1 en type 2 hypervisor]{Dit figuur toont het verschil tussen de locatie van de hypervisor en zijn VM’s ten opzichte van de hardware }
+    \label{fig:hyperviors}
     \centering
 \end{figure}
 
@@ -43,11 +43,11 @@ In 2013 kwam Docker\footnote{\url{https://www.docker.com/}} op de markt en slaag
 
 \subsection{Engine}
 
-Voor het aanmaken en draaien van containers op een systeem is er nood aan een container manager of engine. Met een container engine is het mogelijk om een container image te draaien of aan de hand van een image meerdere containers van dezelfde applicatie te maken. Het effectief draaien van de container wordt gedaan aan de hand van een runtime dat vaak gebundeld zit in de engine de rest van de functionaliteiten is eigen aan de engine. De levenscyclus van een container te laten beheren door een engine begint met het ophalen van een container image om van te vertrekken. Deze kunnen gedownload worden van een publieke of privé repository van images. Dit vertrekpunt kan dan verder worden aangepast voor de specifieke applicatie noden vooraleer terug opgeslagen te worden in een repository. Hierna kan de image effectief gebouwd worden om te draaien als een container applicatie. Een container engine kan software zijn die on- premise geïnstalleerd is, waardoor de configuratie zelf te doen is, of het kan worden aangeboden door een Cloud service provider, zodat er in deze Cloud omgeving zonder te veel configuratie met containers kan worden gewerkt\autocite{Casalicchio2020}.
+Voor het aanmaken en draaien van containers op een systeem is er nood aan een container manager of engine. Met een container engine is het mogelijk om een container image te draaien of aan de hand van een image meerdere containers van dezelfde applicatie te maken. Het effectief draaien van de container wordt gedaan aan de hand van een runtime dat vaak gebundeld zit in de engine de rest van de functionaliteiten is eigen aan de engine. Een voorsteling van de werking van containers word getoont in figuur \ref{fig:Containers}. De levenscyclus van een container te laten beheren door een engine begint met het ophalen van een container image om van te vertrekken. Deze kunnen gedownload worden van een publieke of privé repository van images. Dit vertrekpunt kan dan verder worden aangepast voor de specifieke applicatie noden vooraleer terug opgeslagen te worden in een repository. Hierna kan de image effectief gebouwd worden om te draaien als een container applicatie. Een container engine kan software zijn die on- premise geïnstalleerd is, waardoor de configuratie zelf te doen is, of het kan worden aangeboden door een Cloud service provider, zodat er in deze Cloud omgeving zonder te veel configuratie met containers kan worden gewerkt\autocite{Casalicchio2020}.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/container.jpg}
-    \label{fig:Containers}
     \caption[Schema container virtualisatie]{Een schematische voorstelling van container virtualisatie}
+    \label{fig:Containers}
     \centering
 \end{figure}
 
@@ -56,12 +56,12 @@ Om grotere hoeveelheden diverse container applicaties te kunnen beheren is er Co
 
 
 \section{Verschillen tussen virtuele machines en containers}
-Het voornaamste verschil tussen Container virtualisatie en de hypervisor virtualisatie is in de afwezigheid van de volwaardige besturingssystemen bij containers. De applicaties zijn meer geïsoleerd en nemen meer ruimte in beslag bij hypervisor virtualisatie. Containers daarentegen zijn kleiner en minder geïsoleerd waardoor risico’s toenemen. \ref{fig:containerVShypervisor} toont een illustratie van de vershillen.
+Het voornaamste verschil tussen Container virtualisatie en de hypervisor virtualisatie is in de afwezigheid van de volwaardige besturingssystemen bij containers. De applicaties zijn meer geïsoleerd en nemen meer ruimte in beslag bij hypervisor virtualisatie. Containers daarentegen zijn kleiner en minder geïsoleerd waardoor risico’s toenemen. figuur \ref{fig:containerVShypervisor} toont een illustratie van de vershillen.
 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/containerVShyper.jpg}
-    \label{fig:containerVShypervisor}
     \caption[Vergelijking container virtualisatie en type 1 hypervisor]{Een vergelijking in werking tussen container virtualisatie en een type 1 hypervisor voor het draaien van apps}
+    \label{fig:containerVShypervisor}
     \centering
 \end{figure}
 

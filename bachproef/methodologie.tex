@@ -54,8 +54,8 @@ Om zelf te werken met Linux containers is te complex om een goede introductie to
         \hline
         Kata containers & ja & De meeste Linux distributies & Extra Configuratie, nood aan Containerd of Cri-o voor uitvoering \\
     \end{tabular}
-    \label{tab:Engines}
     \caption[Overzicht Runtimes en containers]{Een overzicht van gevonden runtimes of containers met hun restricties en toegevoegde complexiteit.}
+    \label{tab:Engines}
     \end{table}
 \end{center}
 
@@ -80,13 +80,12 @@ Docker compose is een uitbreiding van de Docker engine en is daarmee ook gratis 
             \hline 
             DC/OS & ja & DC/OS & Zelf datacenter opzetten \\
         \end{tabular}
-        \label{tab:Ochestration}
         \caption[Overzicht ochestration]{Een overzicht van gevonden Ochestration software met hun restricties en toegevoegde complexiteit.}
+        \label{tab:Ochestration}
     \end{table}
 \end{center}
 
 De specifieke besturingen systemen orchestration DC/OS of een volledige datacenter opzetten met Apache Mesos zijn te complex om een duidelijke introductie te zijn tot container virtualisatie.  Openshift is een te commercieel en bedrijfsgericht product om makkelijk in gebruikt te nemen als student. En tenslotte is er nog de Docker swarm die zelf aan populariteit verliest ten opzichte van Kubernetes als software voor orchestration.
-
 
 
 \subsection{Image repositories}
@@ -106,8 +105,8 @@ Met dat het OCI en hun container image geslaagd is in de standaardisatie contain
             \multicolumn{4}{c}{ } \\
             \multicolumn{4}{l}{*In beta waren geen limieten van toepassing, het zal de Github Packages limieten delen.} \\
         \end{tabular}
-        \label{tab:repositories}
         \caption[Overzicht image repositories]{Een overzicht van gevonden image repositories met hun limieten voor gratis accounts.}
+        \label{tab:repositories}
     \end{table}
 \end{center}
 
@@ -172,8 +171,8 @@ docker build -t getting-started .
 Met dit commando wordt op basis van de dockerfile in de lokale map een image gemaakt en krijgt deze de tag “getting started”. Via de desktopapplicatie, afgebeeld in figuur\ref{fig:Dockerdesktop}, of het commando `docker image ls' of `docker images` wordt een lijst van lokale images getoond waaronder de aangemaakte getting started image.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/dockerImg.png}
-    \label{fig:Dockerdesktop}
     \caption[De Docker desktop applicatie]{De Docker desktop applicatie, dit deel toont alle lokaal bewaarde images}
+    \label{fig:Dockerdesktop}
     \centering
 \end{figure}
 \begin{verbatim}
@@ -257,8 +256,8 @@ docker run -dp 3000:3000 `
 Eens de container gestart is kunnen de log berichten van de containers opgevraagd worden of via hetzelfde commando als eerder . De MySQL server aangesproken worden. Afbeelding \ref{fig:powershellsql} toont hoe in powershell de inhoud van de SQL databank opgehaald werd.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/sqlquery.png}
-    \label{fig:powershellsql}
     \caption[Het aanspreken van een SQL server binnen een container]{Met docker is er in powershell ingelogd op de SQL server die in een container staat om zo de inhoud op te halen.}
+    \label{fig:powershellsql}
     \centering
 \end{figure}
 
@@ -315,8 +314,8 @@ Voor het testen van het werken met Podman werden dezelfde stappen en begin besta
 Voor het builden van de image heeft Podman het volgende commando, het uitvoeren word getoont in figuur \ref{fig:podmanbuild}.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/podmanbuild.png}
-    \label{fig:podmanbuild}
     \caption[Met podman een containerfile builden]{Hier maakt Podman met het inhoudelijk zelfde docker-/containerfile as Docker een image}
+    \label{fig:podmanbuild}
     \centering
 \end{figure}
 \begin{verbatim}
@@ -328,8 +327,8 @@ Gelijkaardig vraag je de images op met `podman images ls' of `podman images'. Oo
 Vervolgens kan de container worden gestart met volgend comando en ook te zien in figuur \ref{fig:podmanrun}. 
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/podmanrun.png}
-    \label{fig:podmanrun}
     \caption[Podman die een web ap uitvoert]{hier is via command line de aangemaakte container gestart en wort deze op de achtergrond getoont in een webbrowser}
+    \label{fig:podmanrun}
     \centering
 \end{figure}
 \begin{verbatim}
@@ -369,7 +368,7 @@ Er bestaat ook een project om Docker compose na te bootsen voor Podman genaamd P
 \begin{verbatim}
 podman-compose up
 \end{verbatim}
-Via pods ps is te zien dat de pod aangemaakt is maar de ingestelde localhost poort 3000 zoals bij Docker werkt niet. Na zonder succes te zoeken naar een manier om de interne poorten van de pod aan te spreken is dit deel beëindigd zonder te kunnen testen of dat de Podman compose of de pods werkten.
+Via `pods ps' is te zien dat de pod aangemaakt is maar de ingestelde localhost poort 3000 zoals bij Docker werkt niet. Na zonder succes te zoeken naar een manier om de interne poorten van de pod aan te spreken is dit deel beëindigd zonder te kunnen testen of dat de Podman compose of de pods werkten.
 
 \paragraph{Ervaring}
 Het werken met Docker en Podman voor eenvoudige containers te draaien lijkt sterk op elkaar, veel commando’s zijn hetzelfde en geven ook een gelijkaardig resultaat. Doordat het standaard met Fedora gebundeld is was de installatie geen probleem. Ook moet voor het te kunnen gebruiker niet zelf de lokale Podman runtime starten vooraleer je deze kan gebruiken. Echter het werken met de pods van Podman is moeilijker dan met de eenvoudige verbinding die je met Docker kan leggen.
@@ -441,14 +440,23 @@ Podman Pull ghcr.io/username/getting-started:1.0
 
 Podman voor he pullen standaard de naam zoeken in de repositories van het Fedora project of de repositories van red hat vooraleer het op de Docker hub te proberen, dus is het specifiëren van locatie ook nodig.
 
-Tijdens het werken met Podman en GitHub werd er ook een recent gepubliceerd blog van de Fedora Magazine die eens overloopt hoe je met Podman minder grote container images kan maken. Door in het Dockerfile of container file voor je container image optionele dependencies en feature die standaard in je base image staan te verwijderen kan je image grootte verkleind worden. Hiervoor is werd er gewerkt met een Fedora container die één enkele statisch html pagina toont. Bij het begin was de container gebuild met continerfile in listing. Na een paar stappen werd de containerfile listing en was de ruimte die de image inneemt verminderd.
-\begin{lstlisting}
-docker run -d \
---pod=app \
--v todo-mysql-data:/var/lib/mysql \
--e MYSQL_ROOT_PASSWORD=secret \
--e MYSQL_DATABASE=todos \
-mysql:5.7
+Tijdens het werken met Podman en GitHub werd er ook een recent gepubliceerd blog van de Fedora Magazine\footnote{\url{https://fedoramagazine.org/build-smaller-containers/}} die eens overloopt hoe je met Podman minder grote container images kan maken. Door in het Dockerfile of container file voor je container image optionele dependencies en feature die standaard in je base image staan te verwijderen kan je image grootte verkleind worden. Hiervoor is werd er gewerkt met een Fedora container die één enkele statisch html pagina toont. Bij het begin was de container gebuild met continerfile in listing. Na een paar stappen werd de containerfile listing \ref{lst:smallComposefile} en was de ruimte die de image inneemt verminderd.
+\begin{lstlisting}[caption=inhoud van een containerfile die dormidel van een kleinere base en het weglaten van dependancies minder ruimte inneemt,label=lst:smallComposefile]
+# Use Fedora minimal 33 as base image
+FROM registry.fedoraproject.org/fedora-minimal:33
+
+# Install httpd
+RUN microdnf install -y httpd --nodocs --setopt install_weak_deps=0 && \
+microdnf clean all -y
+
+# Copy the website
+COPY files/* /var/www/html/
+
+# Expose Port 80/tcp
+EXPOSE 80
+
+# Start httpd
+CMD ["httpd", "-DFOREGROUND"]
 \end{lstlisting}
 
 De blog gaf ook een voorbeeld voor het werken met Buildah voor het maken van een image zonder een base image te hebben, maar installatie van Buildah lukte niet.
@@ -457,7 +465,7 @@ De ondersteuning die Minikube heeft voor Podman op het moment van dit onderzoek 
 \begin{verbatim}
 minikube start --driver=podman --container-runtime=cri-o
 \end{verbatim}
-Bij een eerste keer proberen starten van Minikube een kwam er fout. De Minikube help pagina\footnote{\url{https://minikube.sigs.k8s.io/docs/drivers/Podman/}} voor Podman heeft de oplossing staan. De fout wordt opgelost door in de visudo configuratie een lijn aan het einde to te voegen
+Bij een eerste keer proberen starten van Minikube kwam er een fout. De Minikube help pagina\footnote{\url{https://minikube.sigs.k8s.io/docs/drivers/Podman/}} voor Podman heeft de oplossing staan. De fout wordt opgelost door in de visudo configuratie een lijn aan het einde to te voegen
 \begin{verbatim}
 $ sudo visudo
 username ALL=(ALL) NOPASSWD: /usr/bin/podman
@@ -471,8 +479,8 @@ kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
 \end{verbatim}
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/hellokube.png}
-    \label{fig:hellokube}
     \caption[Het opstarten van een contianer met kubectl]{Met kubernetes is een container deployment aangemaakt.}
+    \label{fig:hellokube}
     \centering
 \end{figure}
 
@@ -483,11 +491,12 @@ minikube dashboard
 Met deze dashboard kunnen veel van de functionaliteiten van Kubernetes gedaan worden zonder de CLI te gebruiken. zo is er via de dasboard een extra pod van de hello minikube container gestart zoals getoont in afbeelding \ref{fig:kubenetesDash}. Iets dat ook bijzonder interessant lijkt is dat bij het maken van een container in de dashboard met een form kan worden gewerkt. Hier is het voornaamste de naam in te stellen en een adres waarvan de image moet worden gepulled. Kubernetes heeft echter geen voor de hand liggende methode om lokaal bewaarde images of private images te gebruiken bij het starten van een container.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/kubenetesDash.png}
-    \label{fig:kubenetesDash}
     \caption[the kubenetes Dashboard]{hier toont de Kubernetes dashboard dat een nieuwe pod van de hellominikube container recent gestart is}
+    \label{fig:kubenetesDash}
     \centering
 \end{figure}
-Vervolgens werd een op basis van een Kubernetes tutorial\footnote{\url{https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/}}  een Wordpress site gemaakt. Dit gebeurt analoog als Docker compose met configuratie bestanden die door Kubernetes worden ingelezen. De configuratiebestanden voor de SQL-databank container en de wordpress container staan in bijlage 1 en 2. Het primaire bestand dat Kubernetes zal inlezen is een kustomization.yaml. Omdat het wachtwoord gevoelig is kan er gewerkt worden met een secret generator in de kustomization.yaml, dit is te zien in listing \ref{lst:kustomization} . Ook zijn de verwijzingen naar de configuratie van de resources voor de wordpress site toegevoegd aan dit bestand.
+
+Vervolgens werd een op basis van een Kubernetes tutorial\footnote{\url{https://kubernetes.io/docs/tutorials/stateful-application/mysql-wordpress-persistent-volume/}}  een Wordpress site gemaakt. Dit gebeurt analoog als Docker compose met configuratie bestanden die door Kubernetes worden ingelezen. De configuratiebestanden voor de SQL-databank container en de wordpress container staan in bijlage \ref{K8sql} en \ref{K8wp}. Het primaire bestand dat Kubernetes zal inlezen is een kustomization.yaml. Omdat het wachtwoord gevoelig is kan er gewerkt worden met een secret generator in de kustomization.yaml, dit is te zien in listing \ref{lst:kustomization} . Ook zijn de verwijzingen naar de configuratie van de resources voor de wordpress site toegevoegd aan dit bestand.
 \begin{lstlisting}[caption=inhoud van kustomization.yaml,label=lst:kustomization]
 secretGenerator:
 - name: mysql-pass
@@ -552,7 +561,7 @@ en
 nomad server members
 \end{verbatim}
 
-Voor het werken met de jobs die Nomad hanteert stel hasicorp voor om te vertrekken met het volgend commando om in de huidig actieve map een exmaple.nomad te genereren de inhoud woord ook getoont in bijlage. Dit is een kleine container van een redis image die met de docker engine wordt uitgevoerd
+Voor het werken met de jobs die Nomad hanteert stel hasicorp voor om te vertrekken met het volgend commando om in de huidig actieve map een exmaple.nomad te genereren de inhoud woord ook getoont in bijlage \ref{nomadjobconfig}. Dit is een kleine container van een redis image die met de docker engine wordt uitgevoerd
 \begin{verbatim}
 nomad job init
 \end{verbatim}
@@ -587,14 +596,14 @@ Door de bijkomende barrière van de hasiorp configuration language is het niet g
 Na het installeren van de Docker engine werd er eerst getest of dat alles  werkte zoals het direct op de laptop lukte. Hierbij werden geen problemen ondervonden. Hierna werd een dev omgeving Nomad instantie opgestart om eens mee te werken.
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/nomadrun.png}
-    \label{fig:nomadrun}
     \caption[Een voorbeeld Nomad job]{hier wordt via de cli van Nomad de example.nomad job gestart}
+    \label{fig:nomadrun}
     \centering
 \end{figure}
 \begin{figure}[h]
     \includegraphics[width=\linewidth]{img/nomdaddash.png}
-    \label{fig:nomdaddash}
     \caption[de nomad dashboard]{de dashboard weergave om een job te starten met Nomad}
+    \label{fig:nomdaddash}
     \centering
 \end{figure}
 

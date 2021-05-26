@@ -5,7 +5,7 @@
 \chapter{Conclusie}
 \label{ch:conclusie}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
+% Trek een duidelijke conclusie, in de vorm van een antwoord op de
 % onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
 % hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
 % Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
@@ -13,16 +13,18 @@
 % niet duidelijk zijn?
 % Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
 %onderzoek?
+Het eerste dat dit onderzoek kan besluiten is dat om te leren werken met containers er best gebruik gemaakt wordt van een VM. Hiervoor is een Linux VM met 4 GB ram geheugen, meer dan 20 GB harde schijfruimte , 2 CPU en een webbrowser voldoende. Ten tweede zijn er vijf technologieën of services die geschikt zijn om te gebruiken. Voor zowel engines als repositories is er een keuze tussen twee goede technologieën. Enkel voor orchestration is er een duidelijk beste keuze. 
 
-%Verdere onderzoek? meer schrijven
+Van alle engines die gebruikt kunnen worden zijn Docker en Podman de eenvoudigste om me te werken. Deze twee genieten ook van een grote gelijkenis dus zou het niet te moeilijk zijn om van de ene over te schakelen naar de andere. Echter voor meerdere containers samen is er een groter verschil. Docker en de Docker compose houden het vrij eenvoudig terwijl de Podman pods meer kunnen maar ook complexer zijn. Echter beide zouden onnodig zijn als meerdere containers verbinden enkel via de orchestration software geregeld wordt.
 
-Het eerste dat dit onderzoek kan besluiten is dat om te leren werken met containers er best gebruik gemaakt word van een VM. hiervoor is een Linux VM met 4gb ram geheugen , 2 CPU en een webbrowser voldoende. Ten tweede zijn er vijf technologieën of services die geschikt zijn om te gebruiken. Voor zowel engines als repositories is er een keuze tussen twee goede technologieën. Enkel voor orchestration is er één duidelijk beste keuze. 
+Voor de images online te bewaren is gebruik maken van de Docker Hub het zekerst om mee werken en wordt deze ook als standaard door beide engines gebruikt. Doordat de GitHub Container Registry nog in bèta was tijdens dit onderzoek kan niet met zekerheid gezegd worden of dat deze beter voor de student om zijn of haar eigen images te bewaren. Het werken met de GitHub Container Registry zou wel kunnen dienen om te tonen dat er meer opties mogelijk zijn om container images te bewaren dan enkel de Docker Hub en ook om een student meer bekend te maken met bijkomende functionaliteiten van GitHub. 
 
-Van alle engines die gebruikt kunnen worden zijn Docker en Podman de eenvoudigste om me te werken. Deze twee genieten ook van een grootte gelijkenis dus zou het niet te moeilijk zijn om van de ene over te schakelen naar een andere. Echter voor meerdere containers samen is er een grootser verschil Docker en de Docker compose houden het vrij eenvoudig terwijl de Podman pods meer kunnen maar ook complexer zijn. echter beide zouden onnodig zijn als meerdere containers verbinden enkel via de orchestration software geregeld wordt.
+Voor Orchestration is het duidelijk dat Kubernetes het beste is. Het heeft voor container virtualisatie de meeste mogelijkheden, wordt het meest gebruikt in het bedrijfsleven en heeft een dashboard die het leren werken met Kubernetes tegemoet komt. Om effectief te werken met een Kubernetes instantie is Minikube als intermediair ook het beste. Minikube kan zonder bijkomende configuratie met Docker als achterliggende engine werken. Ook heeft het met een paar extra stappen ondersteuning voor Podman als engine.
 
-Voor de images online te bewaren is gebruik maken van de Docker Hub het zekerst om mee werken en deze ook als standaard door beide engine gebruikt.. Doordat de GitHub Container Registry nog in bèta was tijdens dit onderzoek kan niet met zekerheid gezegd worden of dat deze beter voor de student om zijn of haar eigen images te bewaren. Het werken met de GitHub container registry zou well kunnen dienen om te tonen dat er meer opties mogelijk zijn om container images te bewaren dan enkel de Docker hub en ook om een student meer gekend te maken met bijkomende functionaliteiten van GitHub. 
+Andere gevonden software en technologieën kunnen vaak meer dan Docker, Podman of Kubernetes. Maar dit gaat gepaard met een mindere focus op Containers en daardoor een verhoogde complexiteit.
 
-Voor Orchestration is het duidelijk dat Kubernetes het beste is. Het heeft voor container virtualisatie de meeste mogelijkheden, wordt het meest gebruikt in het berdrijfsleven en heeft een dashboard die het leren werken met Kubernetes tegemoet komt. Om effectief te werken met een Kubernetes instantie is Minikube als intermediair ook het beste. Minikube kan zonder bijkomende configuratie met Docker als achterliggende engine werken. ook heeft het met een paar extra stappen ondersteuning voor Podman als engine.
+Dit onderzoek heeft zich vooral gericht naar het lokaal kunnen werken met Containers waardoor het gebruiken van containers in een Cloud omgeving niet behandelt werd. Een dieper onderzoek naar het werken met containers in de Cloud als student is nog nodig om hier zicht op te krijgen. 
+
 
 
 

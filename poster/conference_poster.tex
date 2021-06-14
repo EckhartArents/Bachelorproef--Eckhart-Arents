@@ -51,11 +51,11 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[t]{0.75\linewidth}
-\VeryHuge \color{HoGentAccent1} \textbf{Titel van uw bachelorproef} \color{Black}\\ % Title
-\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
-\huge \textbf{Naam Voornaam, co-promotor, promotor}\\[0.5cm] % Author(s)
+\VeryHuge \color{HoGentAccent1} \textbf{Docker of alternatieven als introductie tot container virtualisatie} \color{Black}\\ % Title
+%%\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
+\huge \textbf{Arents Eckhart, Van Vreckem Bert}\\[0.5cm] % Author(s)
 \huge Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent\\[0.4cm] % University/organization
-\Large \texttt{voornaam.naam@hogent.be} \\
+\Large \texttt{Eckhart.Arents@hogent.be} \\
 \end{minipage}
 %
 \begin{minipage}[t]{0.25\linewidth}
@@ -76,9 +76,7 @@
 \color{HoGentAccent1} % Navy color for the abstract
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+Een onderzoek naar software voor container virtualisatie en verwante technologieën die kan gebruikt worden als leermiddel voor een student. Hiertoe werd eerst een onderzoek naar alle aanbieders van technologieën uitgevoerd, om ze vervolgens uit te proberen en in te schatten welke de meest geschikte is. Zo werden Docker en Podman beide beoordeeld als meest geschikte container engines en Kubernetes als beste leermiddel voor orchestration.
 \end{abstract}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -88,15 +86,9 @@ The nose? On second thoughts, let's not go there. It is a silly place. Bloody Pe
 \section*{Introductie}
 \color{black}
 \color{black}
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+Container virtualisatie is een alternatieve manier om te virtualiseren ten opzichte van de klassieke virtuele machine. Bij container virtualisatie wordt een applicatie die uitgevoerd word enkel voorzien van wat het nodig heeft. Hierdoor zijn containers lichter in gebruik dan virtuele machines en ook populair in cloud omgevingen. De technologie voor container virtualisatie is recent populair geworden dankzij Docker, maar komt echter nog niet aan bod binnen de opleiding toegepaste informatica aan de HoGent. In dit onderzoek werden Docker en alternatieven onderzocht naar hun geschiktheid om de volledige levenscyclus van een container beter te leren begrijpen.
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say 'Ni' again to you, if you do not appease us.
-
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
-
-You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
-
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
+Hiervoor werd eerst gekeken naar de mogelijkheden voor het effectief draaien van containers, de engine, en bijhorende container types. Verder werden alle software aanbiedingen voor het beheren van meerdere containers, zogenaamde orchestration software, afgetoetst. Ook werd gezocht naar mogelijke alternatieven voor de Docker hub voor het delen van containers. Ten slotte werden de container virtualisatie mogelijkheden van de grote cloud hosting services bekeken.
 %----------------------------------------------------------------------------------------
 %	GEOLOGY
 %----------------------------------------------------------------------------------------
@@ -105,15 +97,11 @@ Why do you think that she is a witch? We want a shrubbery!! I don't want to talk
 \color{HoGentAccent1} 
 \section*{Experimenten}
 \color{black}
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
+Er werd praktijkgericht te werk gegaan door te vertrekken van de meest toegankelijke software voor de engines en de orchestration. Zo werd onderzocht hoe de Docker engine werkt op Windows als deel van de Docker desktop applicatie. Dit werd vergeleken met Podman in een Fedora virtuele machine. Ook werd Podman getest in een andere Linux omgeving met een Ubuntu virtuele machine.
 
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
+Voor orchestration werd onderzocht hoe Kubernetes werkt als onderdeel van de Docker desktop applicatie. Dit werd dan vergeleken met Kubernetes die met Podman werkt en HashiCorp Nomad als orchestration software.
 
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-
+Ten slotte is er tussendoor ook onderzocht hoe het werken met de Docker Hub of de GitHub Container Registry van elkaar verschillen of niet qua gebruik, zowel in Docker als in Podman.
 
 \color{HoGentAccent1} 
 \section*{Sectie met figuur}
@@ -121,8 +109,8 @@ Bring her forward! I don't want to talk to you no more, you empty-headed animal 
 
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=1.0\linewidth]{grail}
-\captionof{figure}{\color{HoGentAccent5} He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say 'Ni' again to you, if you do not appease us}
+\includegraphics[width=1.0\linewidth]{software}
+\captionof{figure}{\color{HoGentAccent5}De Gevonden software en service aanbieders gebundeld per categorie}
 \end{center}\vspace{1cm}
 
 %------------------------------------------------
@@ -132,7 +120,7 @@ Bring her forward! I don't want to talk to you no more, you empty-headed animal 
 \color{HoGentAccent1} 
 \section*{Conclusies}
 \color{black}
-on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+In het algemeen kan gesteld worden dat veel van de technologieën nood hebben aan Linux als onderliggend besturingssysteem en dat voor velen een virtuele machine nodig zal zijn. Tussen Docker en Podman is er weinig verschil te vinden. Podman is mogelijk iets complexer dan Docker door de ingebouwde “pods”. Voor orchestration is Kubernetes duidelijk de beste dankzij een uitstekende dashboard interface en ruimere ondersteuning dan Nomad. Voor het delen van containers wordt de Docker Hub het meest gebruikt. De GitHub Container Registry is een goed alternatief maar nog in bèta.
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
@@ -140,9 +128,7 @@ on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this
 \section*{Toekomstig onderzoek}
 \color{black}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
+De mate waarin de GitHub Container Registry beter is dan de Docker Hub voor een gebruiker zou moeten worden heronderzocht worden eens de bèta hiervan afgelopen is. Ook is er ruimte om te onderzoeken hoe geschikt de cloud hosting services kunnen zijn om een student toe te laten om met cloud en containers gecombineerd te leren werken.
 
 
 %----------------------------------------------------------------------------------------
